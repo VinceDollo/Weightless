@@ -12,7 +12,7 @@
         android:layout_height="74dp"
         android:fontFamily="sans-serif-medium"
         android:text="GO"
-        android:textColor="@color/Noir"
+        android:textColor="@color/noir"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
