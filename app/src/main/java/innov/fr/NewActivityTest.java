@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class cliquesActivity extends AppCompatActivity {
+public class NewActivityTest extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cliquer_activite);
+        setContentView(R.layout.activity_new_test);
     }
 }
