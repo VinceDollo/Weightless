@@ -37,99 +37,99 @@
 
     <!-- Image a cliquer -->
     <ImageView
-        android:id = "@+id/click"
+        android:id="@+id/click"
         android:layout_width="184dp"
         android:layout_height="172dp"
         android:src="@drawable/logo"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="79dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"/>
+        app:layout_constraintVertical_bias="0.3"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="79dp" />
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="84dp"
         android:layout_height="45dp"
-        android:text="Poids"
         android:layout_margin="10dp"
         android:background="@drawable/btt1"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="670dp"
+        android:text="Poids"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95"/>
-        <!--android:onClick="bouton1" -->
+        app:layout_constraintVertical_bias="0.95"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="670dp" />
+    <!--android:onClick="bouton1" -->
 
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="84dp"
         android:layout_height="45dp"
-        android:text="Result"
         android:layout_margin="10dp"
         android:background="@drawable/btt1"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="670dp"
+        android:text="Result"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95"/>
-        <!--android:onClick="bouton2"-->
+        app:layout_constraintVertical_bias="0.95"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="670dp" />
+    <!--android:onClick="bouton2"-->
 
     <Button
         android:id="@+id/btn4"
         android:layout_width="84dp"
         android:layout_height="45dp"
-        android:text="Param"
         android:layout_margin="10dp"
         android:background="@drawable/btt1"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="670dp"
+        android:text="Param"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.68"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95"/>
-        <!--android:onClick="bouton4"-->
+        app:layout_constraintVertical_bias="0.95"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="670dp" />
+    <!--android:onClick="bouton4"-->
 
     <Button
         android:id="@+id/btn3"
         android:layout_width="84dp"
         android:layout_height="45dp"
-        android:text="Connect"
         android:layout_margin="10dp"
         android:background="@drawable/btt1"
-        tools:layout_editor_absoluteX="311dp"
-        tools:layout_editor_absoluteY="670dp"
+        android:text="Connect"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95"/>
-        <!--android:onClick="bouton3"-->
+        app:layout_constraintVertical_bias="0.95"
+        tools:layout_editor_absoluteX="311dp"
+        tools:layout_editor_absoluteY="670dp" />
+    <!--android:onClick="bouton3"-->
 
 
     <LinearLayout
         android:layout_width="421dp"
         android:layout_height="51dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        android:orientation="horizontal"
         tools:layout_editor_absoluteX="-5dp"
         tools:layout_editor_absoluteY="5dp"></LinearLayout>
 
