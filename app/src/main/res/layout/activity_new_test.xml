@@ -12,7 +12,7 @@
         android:layout_height="100dp"
         android:fontFamily="sans-serif-medium"
         android:text="Le poids de votre balance est :"
-        android:textColor="@color/noir"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
