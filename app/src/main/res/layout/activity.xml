@@ -9,6 +9,9 @@
     android:orientation="vertical">
 
 
+    <!-- Fond d'ecran -->
+
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
@@ -20,12 +23,11 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="411dp"
-        android:layout_height="694dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="710dp"
+        android:layout_marginTop="96dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/white" />
-
 
     <TextView
         android:id="@+id/textView2"
@@ -52,5 +54,166 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.003" />
+
+
+
+
+    <!-- BOUTONS -->
+    <!-- Bouton poids -->
+    <ImageView
+        android:id="@+id/logoPoids"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/logoPoids"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
+    <TextView
+        android:id="@+id/NotationPoids"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="708dp"
+        android:text="Poids"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/noir"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="103dp"
+        android:layout_height="75dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        android:stateListAnimator="@null"/>
+
+
+
+    <!-- Bouton Resultat -->
+    <ImageView
+        android:id="@+id/logoResultat"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/logoResultat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
+    <TextView
+        android:id="@+id/NotationPoids"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="708dp"
+        android:text="Resultats"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/noir"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="103dp"
+        android:layout_height="75dp"
+        android:background="@android:color/transparent"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.334"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <!-- Bouton Param -->
+    <TextView
+        android:id="@+id/NotationPoids"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="220dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="708dp"
+        android:text="Paramètres"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/noir"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds" />
+
+    <ImageView
+        android:id="@+id/logoParam"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/logoParam"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="103dp"
+        android:layout_height="75dp"
+        android:background="@android:color/transparent"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.668"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <!-- Bouton Connexion -->
+
+    <ImageView
+        android:id="@+id/logoConnexion"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/logoConnxion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
+    <TextView
+        android:id="@+id/NotationPoids"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="332dp"
+        android:layout_marginLeft="332dp"
+        android:layout_marginTop="708dp"
+        android:text="Connexion"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/noir"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
