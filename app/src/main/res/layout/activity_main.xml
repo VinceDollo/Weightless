@@ -1,5 +1,3 @@
-<!-- page Poids -->
-
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -30,6 +28,7 @@
         app:srcCompat="@drawable/white" />
 
     <ImageView
+        android:contentDescription="@string/Arrow_content_description"
         android:id="@+id/fleche"
         android:layout_width="231dp"
         android:layout_height="227dp"
@@ -38,7 +37,7 @@
         android:layout_marginTop="264dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/Fleche" />
+        app:srcCompat="@drawable/fleche" />
 
     <TextView
         android:id="@+id/Poids"
@@ -47,14 +46,15 @@
         android:layout_marginStart="164dp"
         android:layout_marginLeft="164dp"
         android:layout_marginTop="36dp"
-        android:text="Poids"
+        android:text="@string/weigth"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/noir"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:contentDescription="@string/logo_description"
         android:id="@+id/logo"
         android:layout_width="112dp"
         android:layout_height="95dp"
@@ -89,7 +89,7 @@
         android:text="@string/name"
         android:fontFamily="sans-serif-medium"
         android:textColor="@android:color/white"
-        android:textSize="27dp"
+        android:textSize="27sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -105,7 +105,7 @@
         android:id="@+id/logoPoids"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:src="@drawable/logoPoidsblanc"
+        android:src="@drawable/logo_poids_blanc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
@@ -148,7 +148,7 @@
         android:id="@+id/logoResultat"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:src="@drawable/logoResultat"
+        android:src="@drawable/logo_resultat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.35"
@@ -205,7 +205,7 @@
         android:id="@+id/logoParam"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:src="@drawable/logoParam"
+        android:src="@drawable/logo_param"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.655"
@@ -233,7 +233,7 @@
         android:id="@+id/logoConnexion"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:src="@drawable/logoConnxion"
+        android:src="@drawable/logo_connexion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
