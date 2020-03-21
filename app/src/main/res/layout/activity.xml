@@ -55,18 +55,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.003" />
 
-    <!-- fond gris, pour l'icone sélectionné -->
-    <ImageView
-        android:id="@+id/grey"
-        android:layout_width="137dp"
-        android:layout_height="351dp"
-        app:srcCompat="@drawable/grey"
-        tools:layout_editor_absoluteX="-34dp"
-        tools:layout_editor_absoluteY="551dp"
-        />
-
     <!-- BOUTONS -->
     <!-- Bouton poids -->
+
     <ImageView
         android:id="@+id/logoPoids"
         android:layout_width="60dp"
@@ -94,22 +85,21 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="DuplicateIds" />
 
+
+    <!-- Bouton Resultat -->
     <Button
         android:id="@+id/btn5"
         android:layout_width="103dp"
         android:layout_height="75dp"
         android:background="@android:color/transparent"
+        android:stateListAnimator="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:stateListAnimator="@null"/>
+        app:layout_constraintVertical_bias="0.899" />
 
-
-
-    <!-- Bouton Resultat -->
     <ImageView
         android:id="@+id/logoResultat"
         android:layout_width="60dp"
