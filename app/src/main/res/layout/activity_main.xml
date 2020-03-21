@@ -1,3 +1,5 @@
+<!-- page Poids -->
+
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -103,7 +105,7 @@
         android:id="@+id/logoPoids"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:src="@drawable/logoPoids"
+        android:src="@drawable/logoPoidsblanc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
@@ -120,7 +122,7 @@
         android:layout_marginTop="708dp"
         android:text="Poids"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/noir"
+        android:textColor="@color/blanc"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
