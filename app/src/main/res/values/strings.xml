@@ -1,19 +1,22 @@
 <resources>
-    <string name="name"><u><b><i>Weightless</i></b></u></string>
-    <string name="weight"><u><b><i>Poids</i></b></u></string>
-    <string name="GO"><u><b><i>Go</i></b></u></string>
-    <string name="settings"><u><b><i>Paramètres</i></b></u></string>
-    <string name="results"><u><b><i>Résultats</i></b></u></string>
-    <string name="connexion"><u><b><i>connexion</i></b></u></string>
-
-    <string name="img_description_logo_weightless"><u><b><i>Image weigthless</i></b></u></string>
-    <string name="img_description_weight"><u><b><i>Image poids</i></b></u></string>
-    <string name="img_description_fleche"><u><b><i>Image Fleche verte écran accueil</i></b></u></string>
-    <string name="img_description_settings"><u><b><i>Image paramètres</i></b></u></string>
-    <string name="img_description_connexion"><u><b><i>Image Connexion</i></b></u></string>
+    <string name="name">Weightless</string>
+    <string name="weight">Poids</string>
+    <string name="GO">GO</string>
+    <string name="settings">Paramètres</string>
+    <string name="results">Résultats</string>
+    <string name="connexion"><i>Connexion</i></string>
+    <string name="poids"><i>Poids</i></string>
 
 
-    <string name="a11"><u><b><i>Fleche verte</i></b></u></string>
+
+    <string name="img_description_logo_weightless">Image weigthless</string>
+    <string name="img_description_weight">Image poids</string>
+    <string name="img_description_fleche">Image Fleche verte écran accueil</string>
+    <string name="img_description_settings">Image paramètres</string>
+    <string name="img_description_connexion">Image Connexion</string>
+
+
+    <string name="a11">Fleche verte</string>
 
 
 </resources>

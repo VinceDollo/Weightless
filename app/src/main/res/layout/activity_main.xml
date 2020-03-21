@@ -20,8 +20,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="411dp"
-        android:layout_height="710dp"
+        android:layout_width="429dp"
+        android:layout_height="436dp"
         android:layout_marginTop="96dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,9 +32,8 @@
         android:id="@+id/fleche"
         android:layout_width="231dp"
         android:layout_height="227dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fleche" />
@@ -43,13 +42,13 @@
         android:id="@+id/Poids"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginLeft="164dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginLeft="180dp"
         android:layout_marginTop="36dp"
-        android:text="@string/weight"
+        android:text="@string/poids"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,7 +70,6 @@
         android:id="@+id/Go"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily=""
         android:text="@string/GO"
         android:textColor="@color/black"
         android:textSize="60sp"
@@ -91,7 +89,7 @@
         android:textColor="@android:color/white"
         android:textSize="27sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintHorizontal_bias="0.550"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -121,13 +119,12 @@
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="708dp"
-        android:text="@string/weight"
+        android:text="@string/poids"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/blanc"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/btn_weight"
@@ -159,7 +156,7 @@
         app:layout_constraintVertical_bias="0.97" />
 
     <TextView
-        android:id="@+id/NotationPoids"
+        android:id="@+id/Notationpoids"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="124dp"
@@ -170,8 +167,7 @@
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/btn_results"
@@ -189,7 +185,7 @@
 
     <!-- Bouton Param -->
     <TextView
-        android:id="@+id/NotationPoids"
+        android:id="@+id/Notationparam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="220dp"
@@ -200,8 +196,7 @@
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:contentDescription="@string/img_description_settings"
@@ -246,7 +241,7 @@
         app:layout_constraintVertical_bias="0.97" />
 
     <TextView
-        android:id="@+id/NotationPoids"
+        android:id="@+id/Notationconnexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="332dp"
@@ -257,8 +252,7 @@
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/btn_connexion"
