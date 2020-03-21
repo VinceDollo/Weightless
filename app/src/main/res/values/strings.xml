@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">Weightless</string>
-    <string name="welcome">Bienvenue sur Weightless</string>
+    <string name="name"><u><b><i>Weightless</i></b></u></string>
 </resources>
