@@ -55,8 +55,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.003" />
 
-
-
+    <!-- fond gris, pour l'icone sélectionné -->
+    <ImageView
+        android:id="@+id/grey"
+        android:layout_width="137dp"
+        android:layout_height="351dp"
+        app:srcCompat="@drawable/grey"
+        tools:layout_editor_absoluteX="-34dp"
+        tools:layout_editor_absoluteY="551dp"
+        />
 
     <!-- BOUTONS -->
     <!-- Bouton poids -->
