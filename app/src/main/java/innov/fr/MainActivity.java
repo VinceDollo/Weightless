@@ -43,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 openActivityConnexion();
             }
         });
+
+        button = findViewById(R.id.btn_Go);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityWeight();
+            }
+        });
     }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
