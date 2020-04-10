@@ -103,7 +103,12 @@
         app:layout_constraintVertical_bias="0.80" />
 
 
-    <!-- BOUTONS -->
+
+
+
+
+
+    <!-- BARRE D'OUTILS -->
     <!-- Bouton poids -->
 
     <ImageView
@@ -117,25 +122,25 @@
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="0.95" />
 
     <TextView
         android:id="@+id/NotationPoids"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="708dp"
         android:text="@string/weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintVertical_bias="0.985"/>
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/btn_weight"
         android:layout_width="103dp"
         android:layout_height="75dp"
         android:background="@android:color/transparent"
@@ -161,22 +166,22 @@
         app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="0.95" />
 
     <TextView
-        android:id="@+id/NotationPoids"
+        android:id="@+id/Notationpoids"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginTop="708dp"
         android:text="@string/results"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintVertical_bias="0.985"/>
 
     <Button
         android:id="@+id/btn_results"
@@ -194,19 +199,19 @@
 
     <!-- Bouton Param -->
     <TextView
-        android:id="@+id/NotationPoids"
+        android:id="@+id/Notationparam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="220dp"
-        android:layout_marginLeft="220dp"
-        android:layout_marginTop="708dp"
         android:text="@string/settings"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.655"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintVertical_bias="0.985"/>
 
     <ImageView
         android:contentDescription="@string/img_description_settings"
@@ -219,7 +224,7 @@
         app:layout_constraintHorizontal_bias="0.655"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="0.95" />
 
     <Button
         android:id="@+id/btn_settings"
@@ -229,7 +234,7 @@
         android:stateListAnimator="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.668"
+        app:layout_constraintHorizontal_bias="0.655"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -248,22 +253,22 @@
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="0.95" />
 
     <TextView
-        android:id="@+id/NotationPoids"
+        android:id="@+id/Notationconnexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="332dp"
-        android:layout_marginLeft="332dp"
-        android:layout_marginTop="708dp"
         android:text="@string/connexion"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/blanc"
+        android:textColor="@color/white"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintVertical_bias="0.985"/>
 
     <Button
         android:id="@+id/btn_connexion"
@@ -277,6 +282,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+
+
+
+
+
+
 
     <LinearLayout
         android:layout_width="wrap_content"

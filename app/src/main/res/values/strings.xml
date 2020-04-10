@@ -5,8 +5,13 @@
     <string name="settings">Paramètres</string>
     <string name="results">Résultats</string>
     <string name="connexion"><i>Connexion</i></string>
-    <string name="poids"><i>Poids</i></string>
     <string name="mdpoublié"><i>Identifiant ou mot de passe oublié</i></string>
+    <string name="balance_settings"><i>Paramètres balance</i></string>
+    <string name="language"><i>Langue</i></string>
+    <string name="help"><i>Aide</i></string>
+    <string name="themes"><i>Thèmes</i></string>
+    <string name="privacy_policy"><i>paramètre de confidentialité</i></string>
+    <string name="Terms_of_use"><i>conditions d"'"utilisation</i></string>
 
 
 

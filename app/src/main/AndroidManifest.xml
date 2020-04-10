@@ -11,7 +11,7 @@
         <activity android:name=".activity_connexion"></activity>
         <activity android:name=".activity_settings" />
         <activity android:name=".activity_results" />
-        <activity android:name=".NewActivityTest" />
+        <activity android:name=".activity_weight" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="fullSensor">

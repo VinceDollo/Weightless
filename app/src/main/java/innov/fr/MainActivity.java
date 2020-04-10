@@ -3,9 +3,7 @@ package innov.fr;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void openActivityWeight() {
-        Intent intent = new Intent(this, NewActivityTest.class);
+        Intent intent = new Intent(this, activity_weight.class);
         startActivity(intent);
     }
     public void openActivityResults() {

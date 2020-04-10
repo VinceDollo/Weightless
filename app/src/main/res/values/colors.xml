@@ -2,7 +2,7 @@
 <resources>
     <color name="theme">#92D050</color>
     <color name="black">#000000</color>
-    <color name="blanc">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
     <color name="bleu">#0000FF</color>
 
 </resources>
