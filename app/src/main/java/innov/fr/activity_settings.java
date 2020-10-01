@@ -42,6 +42,15 @@ public class activity_settings extends AppCompatActivity {
                 openActivityConnexion();
             }
         });
+
+        button = findViewById((R.id.language_settings_button));
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityLanguages();
+            }
+        });
+
     }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
@@ -59,6 +68,13 @@ public class activity_settings extends AppCompatActivity {
         Intent intent = new Intent(this, activity_connexion.class);
         startActivity(intent);
     }
+
+    public void openActivityLanguages() {
+        Intent intent = new Intent(this, activity_settings_languages.class);
+        startActivity(intent);
+    }
+
+
 }
 
 
