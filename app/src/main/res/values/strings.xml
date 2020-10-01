@@ -25,7 +25,6 @@
 
     <string name="a11">Fleche verte</string>
 
-    <boolean estConnecte="false"></boolean>
 
 
 </resources>
