@@ -18,7 +18,8 @@
     <string name="seConnecter"><i>Se connecter</i></string>
     <string name="CreerCompte"><i>Créer mon compte</i></string>
     <string name="Langue"><i>Langue</i></string>
-
+    <string name="Aide"><i>Aide</i></string>
+    <string name="Themes"><i>Thèmes</i></string>
 
 
     <string name="img_description_logo_weightless">Image weigthless</string>

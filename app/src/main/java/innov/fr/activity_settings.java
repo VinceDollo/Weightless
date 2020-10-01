@@ -51,6 +51,22 @@ public class activity_settings extends AppCompatActivity {
             }
         });
 
+        button = findViewById((R.id.btnhelp));
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityAide();
+            }
+        });
+
+        button = findViewById((R.id.Themes_button));
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityTheme();
+            }
+        });
+
     }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
@@ -71,6 +87,16 @@ public class activity_settings extends AppCompatActivity {
 
     public void openActivityLanguages() {
         Intent intent = new Intent(this, activity_settings_languages.class);
+        startActivity(intent);
+    }
+
+    public void openActivityAide() {
+        Intent intent = new Intent(this, activity_settings_aide.class);
+        startActivity(intent);
+    }
+
+    public void openActivityTheme() {
+        Intent intent = new Intent(this, activity_settings_themes.class);
         startActivity(intent);
     }
 

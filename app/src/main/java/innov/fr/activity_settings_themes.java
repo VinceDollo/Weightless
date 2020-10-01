@@ -1,20 +1,20 @@
 package innov.fr;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class activity_settings_languages extends AppCompatActivity {
+public class activity_settings_themes extends AppCompatActivity {
 
     private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings_languages);
+        setContentView(R.layout.activity_settings_themes);
         button = findViewById(R.id.btn_weight);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,8 +46,8 @@ public class activity_settings_languages extends AppCompatActivity {
                 openActivityConnexion();
             }
         });
-    }
 
+    }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
         startActivity(intent);
@@ -64,5 +64,4 @@ public class activity_settings_languages extends AppCompatActivity {
         Intent intent = new Intent(this, activity_connexion.class);
         startActivity(intent);
     }
-
 }

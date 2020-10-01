@@ -8,10 +8,13 @@
         android:label="@string/name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity_connexion"></activity>
+        <activity android:name=".activity_settings_themes" />
+        <activity android:name=".activity_connexion" />
         <activity android:name=".activity_settings" />
         <activity android:name=".activity_results" />
         <activity android:name=".activity_weight" />
+        <activity android:name=".activity_settings_aide" />
+        <activity android:name=".activity_settings_languages" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="fullSensor">
