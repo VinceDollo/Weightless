@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="272dp"
-        android:text="Mot de passe"
+        android:text="Password"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -262,18 +262,14 @@
 
 
 
-
-
-
-
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingLeft="80dp"
-        android:paddingTop="200dp">
+        android:paddingTop="200dp"
+        tools:ignore="MissingConstraints">
 
 
         <EditText
