@@ -12,6 +12,7 @@
     <string name="themes"><i>Thèmes</i></string>
     <string name="privacy_policy"><i>paramètre de confidentialité</i></string>
     <string name="Terms_of_use"><i>conditions d"'"utilisation</i></string>
+    <string name="account"><i>Mon compte</i></string>
 
 
 
@@ -23,6 +24,8 @@
 
 
     <string name="a11">Fleche verte</string>
+
+    <boolean estConnecte="false"></boolean>
 
 
 </resources>
