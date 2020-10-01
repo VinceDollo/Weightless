@@ -20,6 +20,10 @@
     <string name="Langue">Langue</string>
     <string name="Aide">Aide</string>
     <string name="Themes">Thèmes</string>
+    <string name="Anglais">English</string>
+    <string name="Espagnol">Español</string>
+    <string name="Allemand">Deutsche</string>
+    <string name="Français">Français</string>
 
 
     <string name="img_description_logo_weightless">Image weigthless</string>

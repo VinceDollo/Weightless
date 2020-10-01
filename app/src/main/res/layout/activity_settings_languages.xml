@@ -9,7 +9,9 @@
 
         <include
             android:id="@+id/some_id_if_needed"
-            layout="@layout/header"/>
+            layout="@layout/header"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="39dp" />
 
         <TextView
             android:id="@+id/Weight"
@@ -28,17 +30,17 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Ceci est l'activité langue"
+            android:text="Choississez votre langue :"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.512" />
+            app:layout_constraintVertical_bias="0.25" />
 
 
 
@@ -218,6 +220,45 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
+
+        <!-- Bouton choix de langue -->
+
+        <Button
+            android:id="@+id/buttonANG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backbutton"
+            android:text="@string/Anglais"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="455dp" />
+
+        <Button
+            android:id="@+id/buttonESP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backbutton"
+            android:text="@string/Espagnol"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="455dp" />
+
+        <Button
+            android:id="@+id/buttonALL"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.08"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintLeft_toLeftOf="0.9"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/backbutton"
+            android:text="@string/Allemand"
+            tools:ignore="DuplicateIds,MissingConstraints"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.5"
+
+
+            />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
