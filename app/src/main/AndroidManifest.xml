@@ -8,6 +8,7 @@
         android:label="@string/name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity_settings_langages_ang"></activity>
         <activity android:name=".activity_settings_themes" />
         <activity android:name=".activity_connexion" />
         <activity android:name=".activity_settings" />
