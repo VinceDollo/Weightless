@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/some_id_if_needed"
-        layout="@layout/header"/>
+        layout="@layout/header" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -31,7 +31,7 @@
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.080"/>
+        app:layout_constraintVertical_bias="0.080" />
 
     <TextView
         android:id="@+id/Id"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="160dp"
-        android:text="Identifiant"
+        android:text="@string/identifiant"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -52,15 +52,13 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="272dp"
-        android:text="Mot de passe"
+        android:text="@string/mdp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    
 
     <Button
         android:id="@+id/btnhelp"
@@ -69,9 +67,9 @@
         android:background="@android:color/transparent"
         android:stateListAnimator="@null"
         android:text="@string/mdpoublié"
-        android:textSize="14dp"
         android:textAllCaps="false"
         android:textColor="@color/bleu"
+        android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -80,19 +78,14 @@
         app:layout_constraintVertical_bias="0.80" />
 
 
-
-
-
-
-
     <!-- BARRE D'OUTILS -->
     <!-- Bouton poids -->
 
     <ImageView
-        android:contentDescription="@string/img_description_weight"
         android:id="@+id/logoPoids"
         android:layout_width="60dp"
         android:layout_height="50dp"
+        android:contentDescription="@string/img_description_weight"
         android:src="@drawable/logo_poids"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,34 +102,33 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.072"
-        app:layout_constraintVertical_bias="0.985"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.985" />
 
     <Button
         android:id="@+id/btn_weight"
         android:layout_width="103dp"
         android:layout_height="75dp"
         android:background="@android:color/transparent"
+        android:stateListAnimator="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:stateListAnimator="@null"/>
-
+        app:layout_constraintVertical_bias="1.0" />
 
 
     <!-- Bouton Resultat -->
     <ImageView
-        android:contentDescription="@string/img_description_settings"
         android:id="@+id/logoResult"
         android:layout_width="60dp"
         android:layout_height="50dp"
+        android:contentDescription="@string/img_description_settings"
         android:src="@drawable/logo_resultat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -158,7 +150,7 @@
         app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985"/>
+        app:layout_constraintVertical_bias="0.985" />
 
     <Button
         android:id="@+id/btn_results"
@@ -188,13 +180,13 @@
         app:layout_constraintHorizontal_bias="0.655"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985"/>
+        app:layout_constraintVertical_bias="0.985" />
 
     <ImageView
-        android:contentDescription="@string/img_description_settings"
         android:id="@+id/logoParam"
         android:layout_width="60dp"
         android:layout_height="50dp"
+        android:contentDescription="@string/img_description_settings"
         android:src="@drawable/logo_param"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -220,10 +212,10 @@
     <!-- Bouton Connexion -->
 
     <ImageView
-        android:contentDescription="@string/img_description_connexion"
         android:id="@+id/logoConnexion"
         android:layout_width="60dp"
         android:layout_height="50dp"
+        android:contentDescription="@string/img_description_connexion"
         android:src="@drawable/logo_connexionblanc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -245,7 +237,7 @@
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985"/>
+        app:layout_constraintVertical_bias="0.985" />
 
     <Button
         android:id="@+id/btn_connexion"
@@ -259,7 +251,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
 
 
     <LinearLayout
@@ -277,7 +268,7 @@
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:background="@drawable/back"
-            android:hint="Identifiant"
+            android:hint="@string/identifiant"
             android:paddingLeft="10dp"
             android:textColor="@color/black"
             android:textSize="22dp" />
@@ -288,7 +279,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="70dp"
             android:background="@drawable/back"
-            android:hint="Mot de passe"
+            android:hint="@string/mdp"
             android:paddingLeft="10dp"
             android:textColor="@color/black"
             android:textSize="22dp" />
@@ -305,7 +296,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/backbutton"
-                android:text="Se connecter" />
+                android:text="@string/seConnecter" />
 
             <Button
                 android:id="@+id/button"
@@ -314,7 +305,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/backbutton"
-                android:text="Créer mon compte" />
+                android:text="@string/CreerCompte" />
         </LinearLayout>
 
     </LinearLayout>

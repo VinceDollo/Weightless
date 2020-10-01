@@ -13,6 +13,10 @@
     <string name="privacy_policy"><i>paramètre de confidentialité</i></string>
     <string name="Terms_of_use"><i>conditions d"'"utilisation</i></string>
     <string name="account"><i>Mon compte</i></string>
+    <string name="identifiant"><i>Identifiant</i></string>
+    <string name="mdp"><i>Mot de passe</i></string>
+    <string name="seConnecter"><i>Se connecter</i></string>
+    <string name="CreerCompte"><i>Créer mon compte</i></string>
 
 
 
