@@ -34,8 +34,9 @@
         android:id="@+id/Id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginLeft="156dp"
+        android:layout_marginTop="176dp"
         android:text="Identifiant"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
@@ -47,8 +48,9 @@
         android:id="@+id/Mdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="268dp"
         android:text="Mot de passe"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
@@ -86,28 +88,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btnhelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:stateListAnimator="@null"
-        android:text="@string/mdpoublié"
-        android:textSize="14dp"
-        android:textAllCaps="false"
-        android:textColor="@color/bleu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.80" />
-
-
-
-
-
 
 
     <!-- BARRE D'OUTILS -->
@@ -285,68 +265,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-
-
-
-
-
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingLeft="80dp"
-        android:paddingTop="200dp">
-
-
-        <EditText
-            android:id="@+id/identifiant"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:background="@drawable/back"
-            android:hint="Identifiant"
-            android:paddingLeft="10dp"
-            android:textColor="@color/black"
-            android:textSize="22dp" />
-
-        <EditText
-            android:id="@+id/Password"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="70dp"
-            android:background="@drawable/back"
-            android:hint="Password"
-            android:paddingLeft="10dp"
-            android:textColor="@color/black"
-            android:textSize="22dp" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/backbutton"
-                android:text="Se connecter" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/backbutton"
-                android:text="Créer mon compte" />
-        </LinearLayout>
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
