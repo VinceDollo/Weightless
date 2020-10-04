@@ -223,42 +223,43 @@
 
         <!-- Bouton choix de langue -->
 
-        <Button
-            android:id="@+id/buttonANG"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/backbutton"
-            android:text="@string/Anglais"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="455dp" />
 
-        <Button
-            android:id="@+id/buttonESP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/backbutton"
-            android:text="@string/Espagnol"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="455dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:paddingHorizontal="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp">
 
-        <Button
-            android:id="@+id/buttonALL"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.08"
-            app:layout_constraintWidth_percent="0.3"
-            app:layout_constraintLeft_toLeftOf="0.9"
-            app:layout_constraintRight_toRightOf="parent"
-            android:background="@drawable/backbutton"
-            android:text="@string/Allemand"
-            tools:ignore="DuplicateIds,MissingConstraints"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintVertical_bias="0.5"
+                <Button
+                    android:id="@+id/buttonANG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_toLeftOf="@+id/buttonESP"
+                    android:background="@drawable/backbutton"
+                    android:text="@string/Anglais" />
 
+                <Button
+                    android:id="@+id/buttonESP"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/backbutton"
+                    android:text="@string/Espagnol" />
 
-            />
+                <Button
+                    android:id="@+id/buttonALL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_toRightOf="@+id/buttonESP"
+                    android:background="@drawable/backbutton"
+                    android:text="@string/Allemand"
+                    tools:ignore="MissingConstraints" />
 
-
+        </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
