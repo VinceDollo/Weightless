@@ -1,5 +1,5 @@
 <resources>
-    <string name="name">Weightless</string>
+    <string name="name" translatable="false">Weightless</string>
     <string name="weight">Poids</string>
     <string name="GO">GO</string>
     <string name="settings">Paramètres</string>
