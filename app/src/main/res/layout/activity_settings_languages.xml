@@ -11,7 +11,7 @@
             android:id="@+id/some_id_if_needed"
             layout="@layout/header"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="39dp" />
+            tools:layout_editor_absoluteY="-75dp" />
 
         <TextView
             android:id="@+id/Weight"
@@ -223,22 +223,17 @@
 
         <!-- Bouton choix de langue -->
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal"
             android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:paddingHorizontal="20dp"
-            android:paddingLeft="20dp"
-            android:paddingTop="20dp">
+            android:gravity="center">
 
                 <Button
                     android:id="@+id/buttonANG"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
                     android:layout_toLeftOf="@+id/buttonESP"
                     android:background="@drawable/backbutton"
                     android:text="@string/Anglais" />
@@ -246,16 +241,15 @@
                 <Button
                     android:id="@+id/buttonESP"
                     android:layout_width="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="30dp"
                     android:background="@drawable/backbutton"
                     android:text="@string/Espagnol" />
 
                 <Button
                     android:id="@+id/buttonALL"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_height="50dp"
                     android:layout_toRightOf="@+id/buttonESP"
                     android:background="@drawable/backbutton"
                     android:text="@string/Allemand"
