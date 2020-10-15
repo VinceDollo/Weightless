@@ -8,7 +8,9 @@
         android:label="@string/name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity_settings_languages_ang"></activity>
+        <activity android:name=".Activity_registration"></activity>
+        <activity android:name=".Activity_home" />
+        <activity android:name=".activity_settings_languages_ang" />
         <activity android:name=".activity_settings_themes" />
         <activity android:name=".activity_connexion" />
         <activity android:name=".activity_settings" />

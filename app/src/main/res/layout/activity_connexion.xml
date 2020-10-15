@@ -10,7 +10,6 @@
         android:id="@+id/some_id_if_needed"
         layout="@layout/header" />
 
-
     <TextView
         android:id="@+id/title_connexion"
         android:layout_width="wrap_content"
@@ -26,185 +25,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.080" />
 
-    <!-- BARRE D'OUTILS -->
-    <!-- Bouton poids -->
-
-    <ImageView
-        android:id="@+id/logoPoids"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:contentDescription="@string/img_description_weight"
-        android:src="@drawable/logo_poids"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
-
-    <TextView
-        android:id="@+id/NotationPoids"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/weight"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" />
-
-    <Button
-        android:id="@+id/btn_weight"
-        android:layout_width="103dp"
-        android:layout_height="75dp"
-        android:background="@android:color/transparent"
-        android:stateListAnimator="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-    <!-- Bouton Resultat -->
-    <ImageView
-        android:id="@+id/logoResult"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:contentDescription="@string/img_description_settings"
-        android:src="@drawable/logo_resultat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
-
-    <TextView
-        android:id="@+id/Notationpoids"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/results"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" />
-
-    <Button
-        android:id="@+id/btn_results"
-        android:layout_width="103dp"
-        android:layout_height="75dp"
-        android:background="@android:color/transparent"
-        android:stateListAnimator="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.334"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-    <!-- Bouton Param -->
-    <TextView
-        android:id="@+id/Notationparam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/settings"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.655"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" />
-
-    <ImageView
-        android:id="@+id/logoParam"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:contentDescription="@string/img_description_settings"
-        android:src="@drawable/logo_param"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.655"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
-
-    <Button
-        android:id="@+id/btn_settings"
-        android:layout_width="103dp"
-        android:layout_height="75dp"
-        android:background="@android:color/transparent"
-        android:stateListAnimator="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.655"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-    <!-- Bouton Connexion -->
-
-    <ImageView
-        android:id="@+id/logoConnexion"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:contentDescription="@string/img_description_connexion"
-        android:src="@drawable/logo_connexionblanc"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
-
-    <TextView
-        android:id="@+id/Notationconnexion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/connexion"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" />
-
-    <Button
-        android:id="@+id/btn_connexion"
-        android:layout_width="103dp"
-        android:layout_height="75dp"
-        android:background="@android:color/transparent"
-        android:stateListAnimator="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:id="@+id/Id"
@@ -212,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="180dp"
-            android:text="@string/identifiant"
+            android:text="@string/email"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -226,7 +52,7 @@
             android:layout_marginLeft="80dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/back"
-            android:hint="@string/identifiant"
+            android:hint="@string/email"
             android:paddingLeft="10dp"
             android:textColor="@color/black"
             android:textSize="22dp" />
@@ -248,8 +74,8 @@
             android:id="@+id/Password"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:layout_marginTop="15dp"
             android:layout_marginLeft="80dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/back"
             android:hint="@string/mdp"
             android:paddingLeft="10dp"
@@ -260,11 +86,12 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
             android:layout_gravity="center"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/btnconnexion"
                 android:layout_width="100dp"
                 android:layout_height="45dp"
                 android:layout_marginRight="30dp"
@@ -272,7 +99,7 @@
                 android:text="@string/seConnecter" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonreg"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:background="@drawable/backbutton"
@@ -281,15 +108,21 @@
 
         <Button
             android:id="@+id/btnhelp"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:stateListAnimator="@null"
             android:text="@string/mdpoublié"
             android:textAllCaps="false"
             android:textColor="@color/bleu"
             android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombres d'essais restants = 5" />
 
     </LinearLayout>
 

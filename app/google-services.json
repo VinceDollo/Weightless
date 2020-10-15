@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "543888340778",
+    "firebase_url": "https://weightless-d5694.firebaseio.com",
+    "project_id": "weightless-d5694",
+    "storage_bucket": "weightless-d5694.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543888340778:android:6531b2603274e46ccb5053",
+        "android_client_info": {
+          "package_name": "innov.fr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543888340778-dniiu1478e2f0appe3dg23hp17ar43l4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHBe5Nax2W_r6Hzp7OGbKxSu4xTV9Z9zA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "543888340778-dniiu1478e2f0appe3dg23hp17ar43l4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
