@@ -1,20 +1,28 @@
 package innov.fr;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Activity_home extends AppCompatActivity {
 
     private Button button;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        firebaseAuth=FirebaseAuth.getInstance();
 
         button = findViewById(R.id.btn_weight);
         button.setOnClickListener(new View.OnClickListener() {
@@ -71,5 +79,25 @@ public class Activity_home extends AppCompatActivity {
     public void openActivityConnexion() {
         Intent intent = new Intent(this, activity_connexion.class);
 
+    }
+    private void Logout() {
+        firebaseAuth.signOut();
+        finish();
+        openActivityConnexion();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.logoutMenu:{
+                Logout();
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
