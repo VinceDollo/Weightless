@@ -22,7 +22,7 @@ public class activity_connexion extends AppCompatActivity {
     private EditText name;
     private EditText password;
     private TextView info;
-    private Button login,registration;
+    private Button login,registration,passwordForgot;
     private int counter = 5;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
@@ -36,6 +36,7 @@ public class activity_connexion extends AppCompatActivity {
         password = (EditText) findViewById(R.id.Password);
         info = (TextView)findViewById(R.id.info);
         registration = (Button)findViewById(R.id.buttonreg);
+        passwordForgot = (Button)findViewById(R.id.forgotPassword) ;
         login = (Button)findViewById(R.id.btnconnexion);
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -57,6 +58,12 @@ public class activity_connexion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openReg();
+            }
+        });
+        passwordForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPF();
             }
         });
     }
@@ -91,6 +98,10 @@ public class activity_connexion extends AppCompatActivity {
     }
     private void openHome(){
         Intent intent = new Intent(this, Activity_home.class);
+        startActivity(intent);
+    }
+    private void openPF(){
+        Intent intent = new Intent(this, PasswordActivity.class);
         startActivity(intent);
     }
     private void checkEmailVerification(){
