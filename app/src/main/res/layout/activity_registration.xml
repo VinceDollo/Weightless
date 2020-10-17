@@ -35,6 +35,11 @@
         tools:layout_editor_absoluteY="346dp">
 
 
+        <ImageView
+            android:id="@+id/imageViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
         <EditText
             android:id="@+id/editTextRegusername"
             android:layout_width="match_parent"
@@ -58,7 +63,13 @@
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword" />
-
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone"
+            android:hint="phone number"/>
         <Button
             android:id="@+id/buttonReginscription"
             android:layout_width="match_parent"
@@ -70,5 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="déja membre?" />
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

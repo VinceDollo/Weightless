@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,13 +17,17 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Activity_registration extends AppCompatActivity {
 
-    private EditText userName, userMail, userPassword;
+    private EditText userName, userMail, userPassword, userPhone;
     private Button regButton;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
+    private ImageView userProfilePic;
+    String name, phone, password, mail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,13 +75,16 @@ public class Activity_registration extends AppCompatActivity {
         userPassword= (EditText)findViewById(R.id.editTextRegPassword);
         regButton= (Button)findViewById(R.id.buttonReginscription);
         userLogin= (TextView)findViewById(R.id.textViewRegconnexion);
+        userPhone = (EditText)findViewById(R.id.editTextPhone);
+        userProfilePic = (ImageView) findViewById(R.id.imageViewProfile);
     }
     private Boolean validate(){
         Boolean result = false;
-        String name = userName.getText().toString();
-        String mail = userMail.getText().toString();
-        String password = userPassword.getText().toString();
-        if((!name.isEmpty()) &&(!mail.isEmpty())&&(!password.isEmpty())){
+        name = userName.getText().toString();
+        mail = userMail.getText().toString();
+        password = userPassword.getText().toString();
+        phone = userPhone.getText().toString();
+        if((!name.isEmpty()) &&(!mail.isEmpty())&&(!password.isEmpty())&&(!phone.isEmpty())){
             result=true;
         }
         else{
@@ -103,6 +111,7 @@ public class Activity_registration extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
+                        sendUserdata();
                         Toast.makeText(Activity_registration.this, "Successfully register",Toast.LENGTH_SHORT).show();
                         firebaseAuth.signOut();
                         finish();
@@ -114,5 +123,11 @@ public class Activity_registration extends AppCompatActivity {
                 }
             });
         }
+    }
+    private void sendUserdata(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        UserProfile userProfile = new UserProfile(name, mail, phone);
+        myRef.setValue(userProfile);
     }
 }
