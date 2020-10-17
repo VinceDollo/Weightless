@@ -61,7 +61,13 @@
             android:id="@+id/buttonUpdateProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update (prochainement)" />
+            android:text="Update" />
+
+        <Button
+            android:id="@+id/buttonchangemdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Changer mon mdp" />
 
 
     </LinearLayout>

@@ -64,7 +64,21 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+        button = findViewById(R.id.buttonchangemdp);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openUpdatePassword();
+            }
+        });
+
         button = findViewById(R.id.buttonUpdateProfile);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openUpdateProfile();
+            }
+        });
 
         profilPic = (ImageView) findViewById(R.id.imageViewProfilePic);
         profileName = (TextView)findViewById((R.id.tvProfilename));
@@ -98,6 +112,16 @@ public class Profile extends AppCompatActivity {
     }
     public void openActivityResults() {
         Intent intent = new Intent(this, activity_results.class);
+        startActivity(intent);
+        Profile.this.finish();
+    }
+    public void openUpdateProfile() {
+        Intent intent = new Intent(this, UpdateProfile.class);
+        startActivity(intent);
+        Profile.this.finish();
+    }
+    public void openUpdatePassword() {
+        Intent intent = new Intent(this, UpdatePassword.class);
         startActivity(intent);
         Profile.this.finish();
     }
