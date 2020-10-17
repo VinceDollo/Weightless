@@ -69,7 +69,7 @@ public class activity_settings_languages extends AppCompatActivity {
         startActivity(intent);
     }
     public void openActivityConnexion() {
-        Intent intent = new Intent(this, activity_connexion.class);
+        Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
     }
 

@@ -4,22 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".activity_connexion">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="590dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/white" />
+    tools:context=".Profile">
+    <include
+        android:id="@+id/some_id_if_needed"
+        layout="@layout/header" />
 
     <TextView
         android:id="@+id/title_connexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/account"
+        android:text="@string/profil"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="30sp"
@@ -28,67 +22,49 @@
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.080"/>
+        app:layout_constraintVertical_bias="0.080" />
 
-    <TextView
-        android:id="@+id/Id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
-        android:layout_marginTop="176dp"
-        android:text="Identifiant"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/Mdp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginLeft="144dp"
-        android:layout_marginTop="268dp"
-        android:text="Mot de passe"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:contentDescription="@string/img_description_logo_weightless"
-        android:id="@+id/logo"
-        android:layout_width="112dp"
-        android:layout_height="95dp"
-        android:src="@drawable/logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003" />
+    <LinearLayout
+        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="346dp">
 
 
+        <ImageView
+            android:id="@+id/imageViewProfilePic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvProfilename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="name : " />
+
+        <TextView
+            android:id="@+id/tvProfilemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="email : " />
+
+        <TextView
+            android:id="@+id/tvProfilephone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="phone : " />
+
+        <Button
+            android:id="@+id/buttonUpdateProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update (prochainement)" />
 
 
-    <TextView
-        android:id="@+id/weightless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/name"
-        android:fontFamily="sans-serif-medium"
-        android:textColor="@android:color/white"
-        android:textSize="27sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.550"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
+    </LinearLayout>
 
     <!-- BARRE D'OUTILS -->
     <!-- Bouton poids -->
@@ -98,7 +74,7 @@
         android:id="@+id/logoPoids"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:src="@drawable/logo_poids"
+        android:src="@drawable/logo_poids_blanc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
@@ -112,7 +88,7 @@
         android:layout_height="wrap_content"
         android:text="@string/weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -229,7 +205,7 @@
         android:id="@+id/logoConnexion"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:src="@drawable/logo_connexionblanc"
+        android:src="@drawable/logo_connexion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
@@ -241,9 +217,9 @@
         android:id="@+id/Notationconnexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/connexion"
+        android:text="@string/profil"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -265,6 +241,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
-
