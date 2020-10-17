@@ -69,6 +69,12 @@
             android:layout_height="wrap_content"
             android:text="Changer mon mdp" />
 
+        <Button
+            android:id="@+id/buttonchangemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Changer mon mail" />
+
 
     </LinearLayout>
 

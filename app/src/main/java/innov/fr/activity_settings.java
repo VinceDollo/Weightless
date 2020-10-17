@@ -50,7 +50,7 @@ public class activity_settings extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivityConnexion();
+                openActivityProfil();
             }
         });
 
@@ -102,11 +102,6 @@ public class activity_settings extends AppCompatActivity {
         Intent intent = new Intent(this, activity_settings.class);
         startActivity(intent);
     }
-    public void openActivityConnexion() {
-        Intent intent = new Intent(this, Profile.class);
-        startActivity(intent);
-        activity_settings.this.finish();
-    }
 
     public void openActivityLanguages() {
         Intent intent = new Intent(this, activity_settings_languages.class);
@@ -125,14 +120,19 @@ public class activity_settings extends AppCompatActivity {
         startActivity(intent);
         activity_settings.this.finish();
     }
+    public void openActivityConnexion() {
+        Intent intent = new Intent(this, activity_connexion.class);
+        startActivity(intent);
+        activity_settings.this.finish();
+    }
+    public void openActivityProfil() {
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+        activity_settings.this.finish();
+    }
     private void Logout() {
         firebaseAuth.signOut();
         openActivityConnexion();
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
-        return true;
     }
 
     @Override

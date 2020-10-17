@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +27,7 @@ public class Profile extends AppCompatActivity {
     private TextView profileName, profileMail, profilePhone;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +62,7 @@ public class Profile extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivityConnexion();
+                openActivityProfil();
             }
         });
 
@@ -80,6 +82,14 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+        button = findViewById(R.id.buttonchangemail);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openUpdateMail();
+            }
+        });
+
         profilPic = (ImageView) findViewById(R.id.imageViewProfilePic);
         profileName = (TextView)findViewById((R.id.tvProfilename));
         profileMail = (TextView)findViewById((R.id.tvProfilemail));
@@ -87,6 +97,7 @@ public class Profile extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
 
@@ -95,7 +106,7 @@ public class Profile extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserProfile userProfile = snapshot.getValue(UserProfile.class);
                 profileName.setText("Name = "+userProfile.getUserName());
-                profileMail.setText("Mail = "+userProfile.getUserEmail());
+                profileMail.setText("Mail = "+firebaseUser.getEmail());
                 profilePhone.setText("Phone = "+userProfile.getUserPhone());
             }
 
@@ -120,6 +131,11 @@ public class Profile extends AppCompatActivity {
         startActivity(intent);
         Profile.this.finish();
     }
+    public void openUpdateMail() {
+        Intent intent = new Intent(this, UpdateMail.class);
+        startActivity(intent);
+        Profile.this.finish();
+    }
     public void openUpdatePassword() {
         Intent intent = new Intent(this, UpdatePassword.class);
         startActivity(intent);
@@ -131,6 +147,11 @@ public class Profile extends AppCompatActivity {
         Profile.this.finish();
     }
     public void openActivityConnexion() {
+        Intent intent = new Intent(this, activity_connexion.class);
+        startActivity(intent);
+        Profile.this.finish();
+    }
+    public void openActivityProfil() {
         finish();
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);

@@ -45,7 +45,7 @@ public class activity_results extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivityConnexion();
+                openActivityProfil();
             }
         });
 
@@ -67,6 +67,11 @@ public class activity_results extends AppCompatActivity {
         activity_results.this.finish();
     }
     public void openActivityConnexion() {
+        Intent intent = new Intent(this, activity_connexion.class);
+        startActivity(intent);
+        activity_results.this.finish();
+    }
+    public void openActivityProfil() {
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
         activity_results.this.finish();

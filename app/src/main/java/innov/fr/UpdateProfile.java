@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,10 +19,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class UpdateProfile extends AppCompatActivity {
-    private EditText username,usermail,userphone;
+    private EditText username,userphone;
     private Button edit;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,21 +31,20 @@ public class UpdateProfile extends AppCompatActivity {
         setContentView(R.layout.activity_update_profile);
 
         username = (EditText)findViewById(R.id.etNameupdate);
-        usermail = (EditText)findViewById(R.id.etMailupdate);
         userphone = (EditText)findViewById(R.id.etPhoneupdate);
         edit = (Button) findViewById(R.id.buttonupdate);
 
-    firebaseAuth = FirebaseAuth.getInstance();
-    firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-    final DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        final DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserProfile userProfile = snapshot.getValue(UserProfile.class);
                 username.setText(userProfile.getUserName());
-                usermail.setText(userProfile.getUserEmail());
                 userphone.setText(userProfile.getUserPhone());
             }
 
@@ -51,15 +52,14 @@ public class UpdateProfile extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(UpdateProfile.this, error.getCode(),Toast.LENGTH_SHORT).show();
             }
-    });
+         });
      edit.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
              String name = username.getText().toString();
              String phone = userphone.getText().toString();
-             String mail = usermail.getText().toString();
 
-             UserProfile userProfile = new UserProfile(name,mail,phone);
+             UserProfile userProfile = new UserProfile(name,firebaseUser.getEmail(),phone);
 
              databaseReference.setValue(userProfile);
              openProfileActivity();

@@ -52,7 +52,7 @@ public class activity_settings_languages_ang extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivityConnexion();
+                openActivityProfil();
             }
         });
 
@@ -84,7 +84,7 @@ public class activity_settings_languages_ang extends AppCompatActivity {
         activity_settings_languages_ang.this.finish();
     }
     public void openActivityConnexion() {
-        Intent intent = new Intent(this, Profile.class);
+        Intent intent = new Intent(this, activity_connexion.class);
         startActivity(intent);
         activity_settings_languages_ang.this.finish();
     }
@@ -94,6 +94,11 @@ public class activity_settings_languages_ang extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openActivityProfil() {
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+        activity_settings_languages_ang.this.finish();
+    }
     private void Logout() {
         firebaseAuth.signOut();
         openActivityConnexion();

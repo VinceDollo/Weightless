@@ -49,7 +49,7 @@ public class activity_settings_languages extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivityConnexion();
+                openActivityProfil();
             }
         });
 
@@ -79,14 +79,20 @@ public class activity_settings_languages extends AppCompatActivity {
         startActivity(intent);
         activity_settings_languages.this.finish();
     }
-    public void openActivityConnexion() {
-        Intent intent = new Intent(this, Profile.class);
+
+    public void openActivityLanguageANG() {
+        Intent intent = new Intent(this, activity_settings_languages_ang.class);
         startActivity(intent);
         activity_settings_languages.this.finish();
     }
 
-    public void openActivityLanguageANG() {
-        Intent intent = new Intent(this, activity_settings_languages_ang.class);
+    public void openActivityConnexion() {
+        Intent intent = new Intent(this, activity_connexion.class);
+        startActivity(intent);
+        activity_settings_languages.this.finish();
+    }
+    public void openActivityProfil() {
+        Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
         activity_settings_languages.this.finish();
     }

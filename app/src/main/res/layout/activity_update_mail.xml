@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateProfile">
+    tools:context=".UpdateMail">
 
     <LinearLayout
         android:layout_width="409dp"
@@ -13,26 +13,19 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
-        <EditText
-            android:id="@+id/etNameupdate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="name"
-            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/etPhoneupdate"
+            android:id="@+id/etnewmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="phone"
-            android:inputType="phone" />
+            android:inputType="textPersonName"
+            android:text="Name" />
 
         <Button
-            android:id="@+id/buttonupdate"
+            android:id="@+id/buttoneditmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EDIT" />
+            android:text="edit password" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

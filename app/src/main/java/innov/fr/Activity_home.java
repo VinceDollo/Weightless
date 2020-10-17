@@ -52,7 +52,7 @@ public class Activity_home extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivityConnexion();
+                openActivityProfil();
             }
         });
 
@@ -80,8 +80,12 @@ public class Activity_home extends AppCompatActivity {
         Activity_home.this.finish();
     }
     public void openActivityConnexion() {
+        Intent intent = new Intent(this, activity_connexion.class);
+        startActivity(intent);
+        Activity_home.this.finish();
+    }
+    public void openActivityProfil() {
         Intent intent = new Intent(this, Profile.class);
-        finish();
         startActivity(intent);
         Activity_home.this.finish();
     }
