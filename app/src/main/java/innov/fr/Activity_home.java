@@ -67,22 +67,26 @@ public class Activity_home extends AppCompatActivity {
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
         startActivity(intent);
+        Activity_home.this.finish();
     }
     public void openActivityResults() {
         Intent intent = new Intent(this, activity_results.class);
         startActivity(intent);
+        Activity_home.this.finish();
     }
     public void openActivitySettings() {
         Intent intent = new Intent(this, activity_settings.class);
         startActivity(intent);
+        Activity_home.this.finish();
     }
     public void openActivityConnexion() {
         Intent intent = new Intent(this, Profile.class);
+        finish();
         startActivity(intent);
+        Activity_home.this.finish();
     }
     private void Logout() {
         firebaseAuth.signOut();
-        finish();
         openActivityConnexion();
     }
     @Override

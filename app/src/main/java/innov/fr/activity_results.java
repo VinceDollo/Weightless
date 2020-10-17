@@ -1,12 +1,19 @@
 package innov.fr;
 import android.content.Intent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class activity_results extends AppCompatActivity {
     private Button button;
+    private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,22 +48,47 @@ public class activity_results extends AppCompatActivity {
                 openActivityConnexion();
             }
         });
+
+        firebaseAuth=FirebaseAuth.getInstance();
     }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
         startActivity(intent);
+        activity_results.this.finish();
     }
     public void openActivityResults() {
+        finish();
         Intent intent = new Intent(this, activity_results.class);
         startActivity(intent);
     }
     public void openActivitySettings() {
         Intent intent = new Intent(this, activity_settings.class);
         startActivity(intent);
+        activity_results.this.finish();
     }
     public void openActivityConnexion() {
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
+        activity_results.this.finish();
+    }
+    private void Logout() {
+        firebaseAuth.signOut();
+        openActivityConnexion();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.logoutMenu:{
+                Logout();
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 

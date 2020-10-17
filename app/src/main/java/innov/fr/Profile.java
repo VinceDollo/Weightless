@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -92,17 +94,40 @@ public class Profile extends AppCompatActivity {
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
         startActivity(intent);
+        Profile.this.finish();
     }
     public void openActivityResults() {
         Intent intent = new Intent(this, activity_results.class);
         startActivity(intent);
+        Profile.this.finish();
     }
     public void openActivitySettings() {
         Intent intent = new Intent(this, activity_settings.class);
         startActivity(intent);
+        Profile.this.finish();
     }
     public void openActivityConnexion() {
+        finish();
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
+    }
+    private void Logout() {
+        firebaseAuth.signOut();
+        openActivityConnexion();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.logoutMenu:{
+                Logout();
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

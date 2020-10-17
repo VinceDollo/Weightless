@@ -95,14 +95,17 @@ public class Activity_registration extends AppCompatActivity {
     private void openPage(){
         Intent intent = new Intent(this, Activity_home.class);
         startActivity(intent);
+        Activity_registration.this.finish();
     }
     private void openCoPage(){
         Intent intent = new Intent(this, activity_connexion.class);
         startActivity(intent);
+        Activity_registration.this.finish();
     }
     private void openMainPage(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        Activity_registration.this.finish();
     }
     private void sendEmailVerification(){
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
@@ -114,7 +117,6 @@ public class Activity_registration extends AppCompatActivity {
                         sendUserdata();
                         Toast.makeText(Activity_registration.this, "Successfully register",Toast.LENGTH_SHORT).show();
                         firebaseAuth.signOut();
-                        finish();
                         openCoPage();
                     }
                     else{

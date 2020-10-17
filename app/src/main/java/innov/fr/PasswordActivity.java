@@ -55,5 +55,6 @@ public class PasswordActivity extends AppCompatActivity {
     private void openHome(){
         Intent intent = new Intent(this, Activity_home.class);
         startActivity(intent);
+        PasswordActivity.this.finish();
     }
 }

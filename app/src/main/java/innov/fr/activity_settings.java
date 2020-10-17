@@ -90,37 +90,43 @@ public class activity_settings extends AppCompatActivity {
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
         startActivity(intent);
+        activity_settings.this.finish();
     }
     public void openActivityResults() {
         Intent intent = new Intent(this, activity_results.class);
         startActivity(intent);
+        activity_settings.this.finish();
     }
     public void openActivitySettings() {
+        finish();
         Intent intent = new Intent(this, activity_settings.class);
         startActivity(intent);
     }
     public void openActivityConnexion() {
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
+        activity_settings.this.finish();
     }
 
     public void openActivityLanguages() {
         Intent intent = new Intent(this, activity_settings_languages.class);
         startActivity(intent);
+        activity_settings.this.finish();
     }
 
     public void openActivityAide() {
         Intent intent = new Intent(this, activity_settings_aide.class);
         startActivity(intent);
+        activity_settings.this.finish();
     }
 
     public void openActivityTheme() {
         Intent intent = new Intent(this, activity_settings_themes.class);
         startActivity(intent);
+        activity_settings.this.finish();
     }
     private void Logout() {
         firebaseAuth.signOut();
-        finish();
         openActivityConnexion();
     }
     @Override

@@ -44,7 +44,6 @@ public class activity_connexion extends AppCompatActivity {
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         if (user != null){
-            finish();
             openHome();
         }
 
@@ -95,20 +94,22 @@ public class activity_connexion extends AppCompatActivity {
     private void openReg(){
         Intent intent = new Intent(this, Activity_registration.class);
         startActivity(intent);
+        activity_connexion.this.finish();
     }
     private void openHome(){
         Intent intent = new Intent(this, Activity_home.class);
         startActivity(intent);
+        activity_connexion.this.finish();
     }
     private void openPF(){
         Intent intent = new Intent(this, PasswordActivity.class);
         startActivity(intent);
+        activity_connexion.this.finish();
     }
     private void checkEmailVerification(){
         FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
         Boolean emailflag = firebaseUser.isEmailVerified();
         if (emailflag){
-            finish();
             openHome();
         }
         else{
