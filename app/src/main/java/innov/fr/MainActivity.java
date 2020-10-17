@@ -7,9 +7,16 @@ import android.view.WindowManager;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ProgressBar;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     private int SLEEP_TIMER=3;
+    private ProgressBar pb;
+    int counter =0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         LogoLauncher logoLauncher = new LogoLauncher();
         logoLauncher.start();
+        progressBar();
     }
     private class LogoLauncher extends Thread{
         public void run(){
@@ -32,6 +40,22 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             MainActivity.this.finish();
         }
+    }
+    private void progressBar(){
+        pb = (ProgressBar) findViewById(R.id.progressBar);
+
+        final Timer t = new Timer();
+        TimerTask tt = new TimerTask() {
+            @Override
+            public void run() {
+                counter++;
+                pb.setProgress(counter);
+                if(counter == 100){
+                    t.cancel();
+                }
+            }
+        };
+        t.schedule(tt,0,10*SLEEP_TIMER);
     }
 }
 
