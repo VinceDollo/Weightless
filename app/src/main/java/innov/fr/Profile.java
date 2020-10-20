@@ -23,7 +23,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Profile extends AppCompatActivity {
     private Button button;
-    private ImageView profilPic;
     private TextView profileName, profileMail, profilePhone;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -82,15 +81,6 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        button = findViewById(R.id.buttonchangemail);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openUpdateMail();
-            }
-        });
-
-        profilPic = (ImageView) findViewById(R.id.imageViewProfilePic);
         profileName = (TextView)findViewById((R.id.tvProfilename));
         profileMail = (TextView)findViewById((R.id.tvProfilemail));
         profilePhone = (TextView)findViewById((R.id.tvProfilephone));
@@ -128,11 +118,6 @@ public class Profile extends AppCompatActivity {
     }
     public void openUpdateProfile() {
         Intent intent = new Intent(this, UpdateProfile.class);
-        startActivity(intent);
-        Profile.this.finish();
-    }
-    public void openUpdateMail() {
-        Intent intent = new Intent(this, UpdateMail.class);
         startActivity(intent);
         Profile.this.finish();
     }

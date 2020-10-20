@@ -8,7 +8,6 @@
         android:label="@string/name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateMail"></activity>
         <activity android:name=".UpdatePassword" />
         <activity android:name=".UpdateProfile" />
         <activity android:name=".Profile" />

@@ -33,12 +33,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="346dp">
 
-
-        <ImageView
-            android:id="@+id/imageViewProfilePic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
         <TextView
             android:id="@+id/tvProfilename"
             android:layout_width="match_parent"
@@ -68,13 +62,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Changer mon mdp" />
-
-        <Button
-            android:id="@+id/buttonchangemail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Changer mon mail" />
-
 
     </LinearLayout>
 
