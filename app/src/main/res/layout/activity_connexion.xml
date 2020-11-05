@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="130dp"
             android:text="@string/email"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/black"
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="30dp"
             android:text="@string/mdp"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/black"
@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
             <Button
@@ -106,6 +106,14 @@
                 android:text="@string/CreerCompte" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Nombres d'essais restants = 5" />
+
         <Button
             android:id="@+id/forgotPassword"
             android:layout_width="wrap_content"
@@ -115,14 +123,9 @@
             android:stateListAnimator="@null"
             android:text="@string/mdpoublié"
             android:textAllCaps="false"
+            android:layout_marginTop="10dp"
             android:textColor="@color/bleu"
             android:textSize="14dp" />
-
-        <TextView
-            android:id="@+id/info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nombres d'essais restants = 5" />
 
     </LinearLayout>
 
