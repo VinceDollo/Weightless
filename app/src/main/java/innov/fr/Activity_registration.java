@@ -26,7 +26,6 @@ public class Activity_registration extends AppCompatActivity {
     private Button regButton;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
-    private ImageView userProfilePic;
     String name, phone, password, mail;
 
     @Override
@@ -75,7 +74,6 @@ public class Activity_registration extends AppCompatActivity {
         regButton= (Button)findViewById(R.id.buttonReginscription);
         userLogin= (TextView)findViewById(R.id.textViewRegconnexion);
         userPhone = (EditText)findViewById(R.id.editTextPhone);
-        userProfilePic = (ImageView) findViewById(R.id.imageViewProfile);
     }
     private Boolean validate(){
         Boolean result = false;
