@@ -25,9 +25,9 @@
         app:layout_constraintVertical_bias="0.080" />
 
     <LinearLayout
-        android:layout_marginTop="120dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="170dp"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
@@ -37,24 +37,33 @@
             android:id="@+id/tvProfilename"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
             android:text="name : " />
 
         <TextView
             android:id="@+id/tvProfilemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
             android:text="email : " />
 
         <TextView
             android:id="@+id/tvProfilephone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
             android:text="phone : " />
 
         <Button
             android:id="@+id/buttonUpdateProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="Update" />
 
         <Button
