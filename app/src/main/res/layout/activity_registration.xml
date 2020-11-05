@@ -17,7 +17,7 @@
         android:text="@string/creation"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
@@ -26,14 +26,13 @@
         app:layout_constraintVertical_bias="0.080" />
 
     <LinearLayout
-        android:layout_marginTop="120dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_marginTop="140dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="346dp">
-
 
         <EditText
             android:id="@+id/editTextRegusername"
@@ -48,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginTop="15dp"
             android:hint="adresse mail"
             android:inputType="textPersonName" />
 
@@ -56,12 +56,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginTop="15dp"
             android:hint="password"
             android:inputType="textPassword" />
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:ems="10"
             android:inputType="phone"
             android:hint="phone number"/>
@@ -69,12 +71,14 @@
             android:id="@+id/buttonReginscription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="S'inscrire" />
 
         <TextView
             android:id="@+id/textViewRegconnexion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="déja membre?" />
 
 

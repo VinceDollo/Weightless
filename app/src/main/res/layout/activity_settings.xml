@@ -33,9 +33,10 @@
 
     <Button
         android:id="@+id/balance_settings_button"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="9dp"
         android:text="@string/balance_settings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -48,7 +49,7 @@
         android:id="@+id/language_settings_button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="9dp"
         android:text="@string/language"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -61,7 +62,7 @@
         android:id="@+id/btnhelp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="9dp"
         android:text="@string/help"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -73,7 +74,7 @@
     <Button
         android:id="@+id/Themes_button"
         android:layout_width="match_parent"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="9dp"
         android:layout_height="50dp"
         android:text="@string/themes"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,7 +87,7 @@
     <Button
         android:id="@+id/Privacy_policy_button"
         android:layout_width="match_parent"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="9dp"
         android:layout_height="50dp"
         android:text="@string/privacy_policy"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,6 +103,7 @@
         android:layout_height="50dp"
         android:text="@string/Terms_of_use"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="9dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -290,6 +292,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
         app:layout_constraintVertical_bias="1.0" />
 
 
