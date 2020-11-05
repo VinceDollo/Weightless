@@ -24,10 +24,13 @@ public class activity_weight extends AppCompatActivity {
     private Button button;
     private FirebaseAuth firebaseAuth;
     private static final String TAG = "activity_weight";
-    private EditText etuser, etdate,etpoids;
-    private static final String KEY_USER = "user", KEY_DATE = "date", KEY_POIDS="poids";
+    private EditText etday, etmonth,etpoids,etyear;
+    private static final String KEY_DAY = "day", KEY_MONTH = "month", KEY_POIDS="poids", KEY_YEAR="year";
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private int poubelleCompteur=0;
+    private String username = "Mez";
+    private String namePoubelle = "poubellen"+String.valueOf(poubelleCompteur);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +68,9 @@ public class activity_weight extends AppCompatActivity {
             }
         });
 
-        etuser = findViewById(R.id.etwheightuser);
-        etdate = findViewById(R.id.etwheightdate);
+        etday = findViewById(R.id.etwheightday);
+        etmonth = findViewById(R.id.etwheightmonth);
+        etyear = findViewById(R.id.etwheightyear);
         etpoids = findViewById(R.id.etwheightpoids );
 
         button = findViewById(R.id.buttonweightGO);
@@ -75,16 +79,18 @@ public class activity_weight extends AppCompatActivity {
     }
 
     public void saveNote(View v) {
-        String user = etuser.getText().toString();
-        String date = etdate.getText().toString();
+        String day = etday.getText().toString();
+        String month = etmonth.getText().toString();
+        String year = etyear.getText().toString();
         String poids = etpoids .getText().toString();
 
         Map<String, Object> note = new HashMap<>();
-        note.put(KEY_USER,user);
-        note.put(KEY_DATE,date);
+        note.put(KEY_DAY,day);
+        note.put(KEY_MONTH,month);
+        note.put(KEY_YEAR,year);
         note.put(KEY_POIDS,poids );
 
-        db.collection("Notebook").document("My First Note").set(note)
+        db.collection(username).document(namePoubelle).set(note)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -98,6 +104,8 @@ public class activity_weight extends AppCompatActivity {
                         Log.d(TAG, e.toString());
                     }
                 });
+        poubelleCompteur++;
+        namePoubelle = "poubellen"+String.valueOf(poubelleCompteur);
     }
 
     public void openActivityWeight() {
