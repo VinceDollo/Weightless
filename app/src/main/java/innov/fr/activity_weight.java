@@ -35,11 +35,13 @@ public class activity_weight extends AppCompatActivity {
     private static final String KEY_DAY = "day", KEY_MONTH = "month", KEY_POIDS="poids", KEY_YEAR="year";
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private int poubelleCompteur=0;
     private String username = "Undefined";
-    private String namePoubelle = "poubellen"+String.valueOf(poubelleCompteur);
+    private String phone = "Undefined";
+    private String numberPoubelle = "Undefined";
+    private int cpb=0;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseUser firebaseUser;
+    DatabaseReference databaseReference;
 
     String currentTime = Calendar.getInstance().getTime().toString();
     String[] valueTime = currentTime.split(" ");
@@ -86,19 +88,23 @@ public class activity_weight extends AppCompatActivity {
         etpoids = findViewById(R.id.etwheightpoids );
 
         button = findViewById(R.id.buttonweightGO);
+        button = findViewById(R.id.buttonweightADDPB);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
 
-        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserProfile userProfile = snapshot.getValue(UserProfile.class);
                 username =userProfile.getUserName();
+                phone = userProfile.getUserPhone();
+                cpb=userProfile.getCompteurPoubelle();
+                numberPoubelle= "poubellen"+String.valueOf(cpb);
             }
 
             @Override
@@ -117,7 +123,7 @@ public class activity_weight extends AppCompatActivity {
         note.put(KEY_YEAR,year);
         note.put(KEY_POIDS,poids );
 
-        db.collection(username).document(namePoubelle).set(note)
+        db.collection(username).document(numberPoubelle).set(note)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -131,10 +137,12 @@ public class activity_weight extends AppCompatActivity {
                         Log.d(TAG, e.toString());
                     }
                 });
-        poubelleCompteur++;
-        namePoubelle = "poubellen"+String.valueOf(poubelleCompteur);
     }
-
+    public void addPoubelle(View v) {
+        cpb++;
+        UserProfile userProfile = new UserProfile(username,firebaseUser.getEmail(),phone,cpb);
+        databaseReference.setValue(userProfile);
+    }
     public void openActivityWeight() {
         finish();
         Intent intent = new Intent(this, activity_weight.class);

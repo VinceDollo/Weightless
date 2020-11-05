@@ -24,6 +24,7 @@ public class UpdateProfile extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseUser firebaseUser;
+    int cpoubelle=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class UpdateProfile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserProfile userProfile = snapshot.getValue(UserProfile.class);
+                cpoubelle=userProfile.getCompteurPoubelle();
                 username.setText(userProfile.getUserName());
                 userphone.setText(userProfile.getUserPhone());
             }
@@ -59,8 +61,7 @@ public class UpdateProfile extends AppCompatActivity {
              String name = username.getText().toString();
              String phone = userphone.getText().toString();
 
-             UserProfile userProfile = new UserProfile(name,firebaseUser.getEmail(),phone);
-
+             UserProfile userProfile = new UserProfile(name,firebaseUser.getEmail(),phone,cpoubelle);
              databaseReference.setValue(userProfile);
              openProfileActivity();
          }

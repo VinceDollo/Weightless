@@ -50,6 +50,13 @@
             android:layout_gravity="center"
             android:onClick="saveNote"/>
 
+        <Button
+            android:id="@+id/buttonweightADDPB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajouter une poubelle"
+            android:layout_gravity="center"
+            android:onClick="addPoubelle"/>
     </LinearLayout>
 
 

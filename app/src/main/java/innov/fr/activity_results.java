@@ -15,6 +15,11 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -28,9 +33,11 @@ public class activity_results extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private TextView tvres;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private DocumentReference noteRef =  db.collection("meziane").document("poubellen0");
     private static final String TAG = "activity_results";
     private static final String KEY_DAY = "day", KEY_MONTH = "month", KEY_POIDS="poids", KEY_YEAR="year";
+    private FirebaseDatabase firebaseDatabase;
+    private String username = "Undefined";
+    private String numberPoubelle = "Undefined";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +78,24 @@ public class activity_results extends AppCompatActivity {
 
         tvres = findViewById(R.id.tvresults);
         firebaseAuth=FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+
+        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                UserProfile userProfile = snapshot.getValue(UserProfile.class);
+                username =userProfile.getUserName();
+                numberPoubelle= "poubellen"+String.valueOf(userProfile.getCompteurPoubelle());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(activity_results.this, error.getCode(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
@@ -107,7 +132,7 @@ public class activity_results extends AppCompatActivity {
         return true;
     }
     public void loadNote(View v){
-        noteRef.get()
+        db.collection(username).document(numberPoubelle).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -117,7 +142,7 @@ public class activity_results extends AppCompatActivity {
                             String year = documentSnapshot.getString(KEY_YEAR);
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
-                            tvres.setText("Date = "+day+" "+month+" "+year+", poids = "+poids+"kg");
+                            tvres.setText("Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+numberPoubelle);
                         }
                         else{
                             Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
