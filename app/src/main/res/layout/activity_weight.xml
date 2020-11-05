@@ -34,33 +34,6 @@
         android:padding="16dp">
 
         <EditText
-            android:id="@+id/etwheightday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Day"
-            android:layout_gravity="center" />
-
-        <EditText
-            android:id="@+id/etwheightmonth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Month"
-            android:layout_gravity="center" />
-
-        <EditText
-            android:id="@+id/etwheightyear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Year"
-            android:layout_gravity="center" />
-
-        <EditText
             android:id="@+id/etwheightpoids"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

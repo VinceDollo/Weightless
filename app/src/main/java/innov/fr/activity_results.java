@@ -20,6 +20,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class activity_results extends AppCompatActivity {
     private Button button;
     private FirebaseAuth firebaseAuth;
@@ -67,7 +70,6 @@ public class activity_results extends AppCompatActivity {
         button = findViewById(R.id.buttonresultsGO);
 
         tvres = findViewById(R.id.tvresults);
-
         firebaseAuth=FirebaseAuth.getInstance();
     }
     public void openActivityWeight() {
@@ -115,7 +117,7 @@ public class activity_results extends AppCompatActivity {
                             String year = documentSnapshot.getString(KEY_YEAR);
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
-                            tvres.setText("Date = "+day+"/"+month+"/"+year+", poids = "+poids+"kg");
+                            tvres.setText("Date = "+day+" "+month+" "+year+", poids = "+poids+"kg");
                         }
                         else{
                             Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();

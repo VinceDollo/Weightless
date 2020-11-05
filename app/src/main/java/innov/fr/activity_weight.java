@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,7 +31,7 @@ public class activity_weight extends AppCompatActivity {
     private Button button;
     private FirebaseAuth firebaseAuth;
     private static final String TAG = "activity_weight";
-    private EditText etday, etmonth,etpoids,etyear;
+    private EditText etpoids;
     private static final String KEY_DAY = "day", KEY_MONTH = "month", KEY_POIDS="poids", KEY_YEAR="year";
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -39,6 +40,12 @@ public class activity_weight extends AppCompatActivity {
     private String namePoubelle = "poubellen"+String.valueOf(poubelleCompteur);
     private FirebaseDatabase firebaseDatabase;
     private FirebaseUser firebaseUser;
+
+    String currentTime = Calendar.getInstance().getTime().toString();
+    String[] valueTime = currentTime.split(" ");
+    String day = valueTime[2];
+    String month =valueTime[1];
+    String year = valueTime[5];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,9 +83,6 @@ public class activity_weight extends AppCompatActivity {
             }
         });
 
-        etday = findViewById(R.id.etwheightday);
-        etmonth = findViewById(R.id.etwheightmonth);
-        etyear = findViewById(R.id.etwheightyear);
         etpoids = findViewById(R.id.etwheightpoids );
 
         button = findViewById(R.id.buttonweightGO);
@@ -105,9 +109,6 @@ public class activity_weight extends AppCompatActivity {
     }
 
     public void saveNote(View v) {
-        String day = etday.getText().toString();
-        String month = etmonth.getText().toString();
-        String year = etyear.getText().toString();
         String poids = etpoids .getText().toString();
 
         Map<String, Object> note = new HashMap<>();
