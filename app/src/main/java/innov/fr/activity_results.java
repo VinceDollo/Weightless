@@ -31,13 +31,14 @@ import java.util.Date;
 public class activity_results extends AppCompatActivity {
     private Button button;
     private FirebaseAuth firebaseAuth;
-    private TextView tvres;
+    private TextView tvres1, tvres2,tvres3, tvres4,tvres5;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "activity_results";
     private static final String KEY_DAY = "day", KEY_MONTH = "month", KEY_POIDS="poids", KEY_YEAR="year";
     private FirebaseDatabase firebaseDatabase;
     private String username = "Undefined";
     private String numberPoubelle = "Undefined";
+    private int compteur =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +77,12 @@ public class activity_results extends AppCompatActivity {
 
         button = findViewById(R.id.buttonresultsGO);
 
-        tvres = findViewById(R.id.tvresults);
+        tvres1 = findViewById(R.id.tvresultsPB1);
+        tvres2 = findViewById(R.id.tvresultsPB2);
+        tvres3 = findViewById(R.id.tvresultsPB3);
+        tvres4 = findViewById(R.id.tvresultsPB4);
+        tvres5 = findViewById(R.id.tvresultsPB5);
+
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
 
@@ -88,7 +94,7 @@ public class activity_results extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserProfile userProfile = snapshot.getValue(UserProfile.class);
                 username =userProfile.getUserName();
-                numberPoubelle= "poubellen"+String.valueOf(userProfile.getCompteurPoubelle());
+                compteur = userProfile.getCompteurPoubelle();
             }
 
             @Override
@@ -132,7 +138,7 @@ public class activity_results extends AppCompatActivity {
         return true;
     }
     public void loadNote(View v){
-        db.collection(username).document(numberPoubelle).get()
+        db.collection(username).document("poubellen"+String.valueOf(compteur)).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -142,7 +148,104 @@ public class activity_results extends AppCompatActivity {
                             String year = documentSnapshot.getString(KEY_YEAR);
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
-                            tvres.setText("Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+numberPoubelle);
+                            tvres1.setText("Poubelle 1 : Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur));
+                        }
+                        else{
+                            Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, e.toString());
+                    }
+                });
+
+        db.collection(username).document("poubellen"+String.valueOf(compteur-1)).get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()){
+                            String day = documentSnapshot.getString(KEY_DAY);
+                            String month = documentSnapshot.getString(KEY_MONTH);
+                            String year = documentSnapshot.getString(KEY_YEAR);
+                            String poids = documentSnapshot.getString(KEY_POIDS);
+
+                            tvres2.setText("Poubelle 2: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-1));
+                        }
+                        else{
+                            Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, e.toString());
+                    }
+                });
+        db.collection(username).document("poubellen"+String.valueOf(compteur-2)).get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()){
+                            String day = documentSnapshot.getString(KEY_DAY);
+                            String month = documentSnapshot.getString(KEY_MONTH);
+                            String year = documentSnapshot.getString(KEY_YEAR);
+                            String poids = documentSnapshot.getString(KEY_POIDS);
+
+                            tvres3.setText("Poubelle 3: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-2));
+                        }
+                        else{
+                            Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, e.toString());
+                    }
+                });
+        db.collection(username).document("poubellen"+String.valueOf(compteur-3)).get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()){
+                            String day = documentSnapshot.getString(KEY_DAY);
+                            String month = documentSnapshot.getString(KEY_MONTH);
+                            String year = documentSnapshot.getString(KEY_YEAR);
+                            String poids = documentSnapshot.getString(KEY_POIDS);
+
+                            tvres4.setText("Poubelle 4: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-3));
+                        }
+                        else{
+                            Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, e.toString());
+                    }
+                });
+        db.collection(username).document("poubellen"+String.valueOf(compteur-4)).get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()){
+                            String day = documentSnapshot.getString(KEY_DAY);
+                            String month = documentSnapshot.getString(KEY_MONTH);
+                            String year = documentSnapshot.getString(KEY_YEAR);
+                            String poids = documentSnapshot.getString(KEY_POIDS);
+
+                            tvres5.setText("Poubelle 5: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-4));
                         }
                         else{
                             Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();

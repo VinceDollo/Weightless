@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Profile extends AppCompatActivity {
     private Button button;
-    private TextView profileName, profileMail, profilePhone;
+    private TextView profileName, profileMail, profilePhone, profileCount;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseUser firebaseUser;
@@ -84,6 +84,7 @@ public class Profile extends AppCompatActivity {
         profileName = (TextView)findViewById((R.id.tvProfilename));
         profileMail = (TextView)findViewById((R.id.tvProfilemail));
         profilePhone = (TextView)findViewById((R.id.tvProfilephone));
+        profileCount = (TextView)findViewById(R.id.tvProfilecount);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -98,6 +99,7 @@ public class Profile extends AppCompatActivity {
                 profileName.setText("Name = "+userProfile.getUserName());
                 profileMail.setText("Mail = "+firebaseUser.getEmail());
                 profilePhone.setText("Phone = "+userProfile.getUserPhone());
+                profileCount.setText("Nombre de poubelles : "+userProfile.getCompteurPoubelle());
             }
 
             @Override
