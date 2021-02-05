@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.common.graph.Graph;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,6 +25,9 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -41,6 +45,8 @@ public class activity_results extends AppCompatActivity {
     private int compteur =0;
     private int sommePoids=0;
     private int nbMesures=0;
+    private int value0=0,value1=0,value2=0,value3=0,value4=0;
+    private GraphView graph;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +112,8 @@ public class activity_results extends AppCompatActivity {
                 Toast.makeText(activity_results.this, error.getCode(),Toast.LENGTH_SHORT).show();
             }
         });
+
+        graph = (GraphView) findViewById(R.id.graph);
     }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
@@ -154,6 +162,7 @@ public class activity_results extends AppCompatActivity {
 
                             tvres1.setText("Poubelle 1 : Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur));
                             sommePoids+=Integer.parseInt(poids);
+                            value0=Integer.parseInt(poids);
                             nbMesures++;
                         }
                         else{
@@ -181,6 +190,7 @@ public class activity_results extends AppCompatActivity {
 
                             tvres2.setText("Poubelle 2: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-1));
                             sommePoids+=Integer.parseInt(poids);
+                            value1=Integer.parseInt(poids);
                             nbMesures++;
                         }
                         else{
@@ -207,6 +217,7 @@ public class activity_results extends AppCompatActivity {
 
                             tvres3.setText("Poubelle 3: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-2));
                             sommePoids+=Integer.parseInt(poids);
+                            value2=Integer.parseInt(poids);
                             nbMesures++;
                         }
                         else{
@@ -233,6 +244,7 @@ public class activity_results extends AppCompatActivity {
 
                             tvres4.setText("Poubelle 4: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-3));
                             sommePoids+=Integer.parseInt(poids);
+                            value3=Integer.parseInt(poids);
                             nbMesures++;
                         }
                         else{
@@ -259,6 +271,7 @@ public class activity_results extends AppCompatActivity {
 
                             tvres5.setText("Poubelle 5: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-4));
                             sommePoids+=Integer.parseInt(poids);
+                            value4=Integer.parseInt(poids);
                             nbMesures++;
                         }
                         else{
@@ -277,6 +290,15 @@ public class activity_results extends AppCompatActivity {
             tvresMoy.setText("Moyenne = "+sommePoids/nbMesures);
         }
         tvresnbm.setText("Nombre de mesures  = "+nbMesures);
+
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
+                new DataPoint(0, value0),
+                new DataPoint(1, value1),
+                new DataPoint(2, value2),
+                new DataPoint(3, value3),
+                new DataPoint(4, value4)
+        });
+        graph.addSeries(series);
     }
 
     @Override
