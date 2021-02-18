@@ -168,9 +168,11 @@ public class activity_results extends AppCompatActivity {
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
                             tvres1.setText("Poubelle 1 : Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur));
-                            sommePoids+=Integer.parseInt(poids);
-                            value0=Integer.parseInt(poids);
-                            nbMesures++;
+                            if (Integer.parseInt(poids)!=value0){
+                                nbMesures++;
+                                value0=Integer.parseInt(poids);
+                                sommePoids+=Integer.parseInt(poids);
+                            }
                         }
                         else{
                             Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
@@ -196,9 +198,11 @@ public class activity_results extends AppCompatActivity {
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
                             tvres2.setText("Poubelle 2: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-1));
-                            sommePoids+=Integer.parseInt(poids);
-                            value1=Integer.parseInt(poids);
-                            nbMesures++;
+                            if (Integer.parseInt(poids)!=value1){
+                                nbMesures++;
+                                value1=Integer.parseInt(poids);
+                                sommePoids+=Integer.parseInt(poids);
+                            }
                         }
                         else{
                             Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
@@ -223,9 +227,11 @@ public class activity_results extends AppCompatActivity {
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
                             tvres3.setText("Poubelle 3: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-2));
-                            sommePoids+=Integer.parseInt(poids);
-                            value2=Integer.parseInt(poids);
-                            nbMesures++;
+                            if (Integer.parseInt(poids)!=value2){
+                                nbMesures++;
+                                value2=Integer.parseInt(poids);
+                                sommePoids+=Integer.parseInt(poids);
+                            }
                         }
                         else{
                             Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
@@ -250,9 +256,11 @@ public class activity_results extends AppCompatActivity {
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
                             tvres4.setText("Poubelle 4: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-3));
-                            sommePoids+=Integer.parseInt(poids);
-                            value3=Integer.parseInt(poids);
-                            nbMesures++;
+                            if (Integer.parseInt(poids)!=value3){
+                                nbMesures++;
+                                value3=Integer.parseInt(poids);
+                                sommePoids+=Integer.parseInt(poids);
+                            }
                         }
                         else{
                             Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
@@ -277,9 +285,11 @@ public class activity_results extends AppCompatActivity {
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
                             tvres5.setText("Poubelle 5: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-4));
-                            sommePoids+=Integer.parseInt(poids);
-                            value4=Integer.parseInt(poids);
-                            nbMesures++;
+                            if (Integer.parseInt(poids)!=value4){
+                                nbMesures++;
+                                value4=Integer.parseInt(poids);
+                                sommePoids+=Integer.parseInt(poids);
+                            }
                         }
                         else{
                             Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
