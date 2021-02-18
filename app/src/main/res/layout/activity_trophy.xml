@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    tools:context=".Activity_trophy">
+
     <include
         android:id="@+id/some_id_if_needed"
-        layout="@layout/header" />
+        layout="@layout/header"
+        tools:layout_editor_absoluteX="-40dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
-        android:id="@+id/title_connexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/profil"
+        android:text="Mes Badges"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="30sp"
@@ -24,78 +26,54 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.080" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="170dp"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="346dp">
-
-        <TextView
-            android:id="@+id/tvProfilename"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_marginLeft="10dp"
-            android:text="name : " />
-
-        <TextView
-            android:id="@+id/tvProfilemail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textSize="20dp"
-            android:layout_marginLeft="10dp"
-            android:text="email : " />
-
-        <TextView
-            android:id="@+id/tvProfilephone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:textSize="20dp"
-            android:text="phone : " />
-        <TextView
-            android:id="@+id/tvProfilecount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:textSize="20dp"
-            android:text="Nombre de poubelles : " />
-
-        <Button
-            android:id="@+id/buttonUpdateProfile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Update" />
-
-        <Button
-            android:id="@+id/buttonchangemdp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Changer mon mdp" />
-        <Button
-            android:id="@+id/buttonaccesbadges"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Accéder à mes badges" />
-
-    </LinearLayout>
-
     <!-- BARRE D'OUTILS -->
     <!-- Bouton poids -->
+
+    <Button
+        android:id="@+id/btn_Load_badges"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="9dp"
+        android:text="Charger mes badges"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183" />
+
+    <TextView
+        android:id="@+id/tvTrophy1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Pas débloqué"
+        app:layout_constraintBottom_toBottomOf="@+id/some_id_if_needed"
+        app:layout_constraintEnd_toEndOf="@+id/some_id_if_needed"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.339"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/ivTrophy1"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.274"
+        app:srcCompat="@drawable/trophy_black" />
 
     <ImageView
         android:contentDescription="@string/img_description_weight"
         android:id="@+id/logoPoids"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:src="@drawable/logo_poids_blanc"
+        android:src="@drawable/logo_poids"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
@@ -109,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="@string/weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -261,5 +239,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Crée ton compte"
+        android:textColor="#000000"
+        android:textSize="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.376" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

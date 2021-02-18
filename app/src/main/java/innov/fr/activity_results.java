@@ -49,7 +49,8 @@ public class activity_results extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_results); button = findViewById(R.id.btn_weight);
+        setContentView(R.layout.activity_results);
+        button = findViewById(R.id.btn_weight);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

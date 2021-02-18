@@ -73,6 +73,14 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+        button = findViewById(R.id.buttonaccesbadges);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBadges();
+            }
+        });
+
         button = findViewById(R.id.buttonUpdateProfile);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,6 +133,11 @@ public class Profile extends AppCompatActivity {
     }
     public void openUpdatePassword() {
         Intent intent = new Intent(this, UpdatePassword.class);
+        startActivity(intent);
+        Profile.this.finish();
+    }
+    public void openBadges() {
+        Intent intent = new Intent(this, Activity_trophy.class);
         startActivity(intent);
         Profile.this.finish();
     }
