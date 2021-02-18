@@ -15,22 +15,18 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.common.graph.Graph;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
-
-import java.util.Calendar;
 import java.util.Date;
 
 public class activity_results extends AppCompatActivity {
@@ -47,6 +43,7 @@ public class activity_results extends AppCompatActivity {
     private int sommePoids=0;
     private int nbMesures=0;
     private int value0=0,value1=0,value2=0,value3=0,value4=0;
+    private String sdate0="...",sdate1="...",sdate2="...",sdate3="...",sdate4="...";
     private GraphView graph;
 
     @Override
@@ -113,12 +110,12 @@ public class activity_results extends AppCompatActivity {
                 Toast.makeText(activity_results.this, error.getCode(),Toast.LENGTH_SHORT).show();
             }
         });
-
         graph = (GraphView) findViewById(R.id.graph);
         graph.setTitle("Evolution de mes dernières pesées");
         graph.setTitleColor(Color.GREEN);
-        graph.getGridLabelRenderer().setHorizontalAxisTitle("Id de mesure");
+        graph.getGridLabelRenderer().setHorizontalAxisTitle("Date mesure (dd/MM)");
         graph.getGridLabelRenderer().setVerticalAxisTitle("Poids( en kg)");
+
         uid=firebaseAuth.getUid();
     }
     public void openActivityWeight() {
@@ -172,6 +169,7 @@ public class activity_results extends AppCompatActivity {
                                 nbMesures++;
                                 value0=Integer.parseInt(poids);
                                 sommePoids+=Integer.parseInt(poids);
+                                sdate0=day+" "+month;
                             }
                         }
                         else{
@@ -202,6 +200,7 @@ public class activity_results extends AppCompatActivity {
                                 nbMesures++;
                                 value1=Integer.parseInt(poids);
                                 sommePoids+=Integer.parseInt(poids);
+                                sdate1=day+" "+month;
                             }
                         }
                         else{
@@ -231,6 +230,7 @@ public class activity_results extends AppCompatActivity {
                                 nbMesures++;
                                 value2=Integer.parseInt(poids);
                                 sommePoids+=Integer.parseInt(poids);
+                                sdate2=day+" "+month;
                             }
                         }
                         else{
@@ -260,6 +260,7 @@ public class activity_results extends AppCompatActivity {
                                 nbMesures++;
                                 value3=Integer.parseInt(poids);
                                 sommePoids+=Integer.parseInt(poids);
+                                sdate3=day+" "+month;
                             }
                         }
                         else{
@@ -289,6 +290,7 @@ public class activity_results extends AppCompatActivity {
                                 nbMesures++;
                                 value4=Integer.parseInt(poids);
                                 sommePoids+=Integer.parseInt(poids);
+                                sdate4=day+" "+month;
                             }
                         }
                         else{
@@ -308,15 +310,44 @@ public class activity_results extends AppCompatActivity {
         }
         tvresnbm.setText("Nombre de mesures  = "+nbMesures);
 
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
-                new DataPoint(0, value0),
-                new DataPoint(1, value1),
-                new DataPoint(2, value2),
-                new DataPoint(3, value3),
-                new DataPoint(4, value4)
-        });
+
+        DataPoint mes0 =  new DataPoint(4, value0);
+        LineGraphSeries<DataPoint> series;
+        StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
+
+        if (nbMesures==5){
+            series = new LineGraphSeries<>(new DataPoint[] {
+                    new DataPoint(0, value4),new DataPoint(1, value3),new DataPoint(2, value2),new DataPoint(3, value1), mes0
+            });
+            staticLabelsFormatter.setHorizontalLabels(new String[]{sdate0,sdate1,sdate2,sdate3,sdate4});
+        }
+        else if (nbMesures==4){
+            series = new LineGraphSeries<>(new DataPoint[] {
+                    new DataPoint(1, value3),new DataPoint(2, value2),new DataPoint(3, value1), mes0
+            });
+            staticLabelsFormatter.setHorizontalLabels(new String[]{sdate0,sdate1,sdate2,sdate3});
+        }
+        else if (nbMesures==3){
+            series = new LineGraphSeries<>(new DataPoint[] {
+                    new DataPoint(2, value2),new DataPoint(3, value1), mes0
+            });
+            staticLabelsFormatter.setHorizontalLabels(new String[]{sdate0,sdate1,sdate2});
+        }
+        else if (nbMesures==2){
+            series = new LineGraphSeries<>(new DataPoint[] {
+                    new DataPoint(3, value1), mes0
+            });
+            staticLabelsFormatter.setHorizontalLabels(new String[]{sdate0,sdate1});
+        }
+        else{
+            series = new LineGraphSeries<>(new DataPoint[] {
+                    mes0
+            });
+            staticLabelsFormatter.setHorizontalLabels(new String[]{sdate0,"..."});
+        }
         series.setBackgroundColor(Color.GREEN);
         graph.addSeries(series);
+        graph.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);
     }
 
     @Override
