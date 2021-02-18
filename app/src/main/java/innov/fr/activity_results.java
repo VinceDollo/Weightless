@@ -117,6 +117,8 @@ public class activity_results extends AppCompatActivity {
         graph = (GraphView) findViewById(R.id.graph);
         graph.setTitle("Evolution de mes dernières pesées");
         graph.setTitleColor(Color.GREEN);
+        graph.getGridLabelRenderer().setHorizontalAxisTitle("Id de mesure");
+        graph.getGridLabelRenderer().setVerticalAxisTitle("Poids( en kg)");
         uid=firebaseAuth.getUid();
     }
     public void openActivityWeight() {
@@ -303,6 +305,7 @@ public class activity_results extends AppCompatActivity {
                 new DataPoint(3, value3),
                 new DataPoint(4, value4)
         });
+        series.setBackgroundColor(Color.GREEN);
         graph.addSeries(series);
     }
 
