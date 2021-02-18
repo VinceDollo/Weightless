@@ -124,7 +124,7 @@ public class activity_weight extends AppCompatActivity {
         note.put(KEY_YEAR,year);
         note.put(KEY_POIDS,poids );
 
-        db.collection(username).document(numberPoubelle).set(note)
+        db.collection(uid).document(numberPoubelle).set(note)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
