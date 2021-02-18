@@ -1,5 +1,6 @@
 package innov.fr;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -114,6 +115,8 @@ public class activity_results extends AppCompatActivity {
         });
 
         graph = (GraphView) findViewById(R.id.graph);
+        graph.setTitle("Evolution de mes dernières pesées");
+        graph.setTitleColor(Color.GREEN);
         uid=firebaseAuth.getUid();
     }
     public void openActivityWeight() {
@@ -151,6 +154,7 @@ public class activity_results extends AppCompatActivity {
         return true;
     }
     public void loadNote(View v){
+        graph.removeAllSeries();
         db.collection(uid).document("poubellen"+String.valueOf(compteur)).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
