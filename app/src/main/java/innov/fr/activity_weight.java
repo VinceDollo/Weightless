@@ -35,7 +35,7 @@ public class activity_weight extends AppCompatActivity {
     private static final String KEY_DAY = "day", KEY_MONTH = "month", KEY_POIDS="poids", KEY_YEAR="year";
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private String username = "Undefined";
+    private String username = "Undefined", uid="Undefined";
     private String phone = "Undefined";
     private String numberPoubelle = "Undefined";
     private int cpb=0;
@@ -112,6 +112,7 @@ public class activity_weight extends AppCompatActivity {
                 Toast.makeText(activity_weight.this, error.getCode(),Toast.LENGTH_SHORT).show();
             }
         });
+        uid=firebaseAuth.getUid();
     }
 
     public void saveNote(View v) {

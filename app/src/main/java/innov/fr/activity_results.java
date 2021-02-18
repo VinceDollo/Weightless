@@ -40,7 +40,7 @@ public class activity_results extends AppCompatActivity {
     private static final String TAG = "activity_results";
     private static final String KEY_DAY = "day", KEY_MONTH = "month", KEY_POIDS="poids", KEY_YEAR="year";
     private FirebaseDatabase firebaseDatabase;
-    private String username = "Undefined";
+    private String username = "Undefined",uid="Undefined";
     private String numberPoubelle = "Undefined";
     private int compteur =0;
     private int sommePoids=0;
@@ -114,6 +114,7 @@ public class activity_results extends AppCompatActivity {
         });
 
         graph = (GraphView) findViewById(R.id.graph);
+        uid=firebaseAuth.getUid();
     }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
@@ -150,7 +151,7 @@ public class activity_results extends AppCompatActivity {
         return true;
     }
     public void loadNote(View v){
-        db.collection(username).document("poubellen"+String.valueOf(compteur)).get()
+        db.collection(uid).document("poubellen"+String.valueOf(compteur)).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -178,7 +179,7 @@ public class activity_results extends AppCompatActivity {
                     }
                 });
 
-        db.collection(username).document("poubellen"+String.valueOf(compteur-1)).get()
+        db.collection(uid).document("poubellen"+String.valueOf(compteur-1)).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -205,7 +206,7 @@ public class activity_results extends AppCompatActivity {
                         Log.d(TAG, e.toString());
                     }
                 });
-        db.collection(username).document("poubellen"+String.valueOf(compteur-2)).get()
+        db.collection(uid).document("poubellen"+String.valueOf(compteur-2)).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -232,7 +233,7 @@ public class activity_results extends AppCompatActivity {
                         Log.d(TAG, e.toString());
                     }
                 });
-        db.collection(username).document("poubellen"+String.valueOf(compteur-3)).get()
+        db.collection(uid).document("poubellen"+String.valueOf(compteur-3)).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -259,7 +260,7 @@ public class activity_results extends AppCompatActivity {
                         Log.d(TAG, e.toString());
                     }
                 });
-        db.collection(username).document("poubellen"+String.valueOf(compteur-4)).get()
+        db.collection(uid).document("poubellen"+String.valueOf(compteur-4)).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
