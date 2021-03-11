@@ -99,7 +99,7 @@ public class Activity_Trophies extends AppCompatActivity {
                                         tv1.setText(documentSnapshot.getString(KEY_t1));
                                     }
                                     if (!documentSnapshot.getString(KEY_t2).equals("false")) {
-                                        iv2.setImageResource(R.drawable.logo);
+                                        iv2.setImageResource(R.drawable.trophy2);
                                         tv2.setText(documentSnapshot.getString(KEY_t2));
                                     }
                                 }
