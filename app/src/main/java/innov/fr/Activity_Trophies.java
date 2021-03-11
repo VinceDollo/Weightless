@@ -1,16 +1,10 @@
 package innov.fr;
 
-import android.content.Intent;
-import android.os.Bundle;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +14,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Activity_trophy extends AppCompatActivity {
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+public class Activity_Trophies extends AppCompatActivity {
+
     private Button button;
     private static final String TAG = "Activity_trophy";
     private static final String KEY_t1 = "trophy1";
@@ -88,14 +89,14 @@ public class Activity_trophy extends AppCompatActivity {
                                     }
                                 }
                                 else{
-                                    Toast.makeText(Activity_trophy.this, "Fail", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Activity_Trophies.this, "Fail", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Activity_trophy.this, "Fail", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Trophies.this, "Fail", Toast.LENGTH_SHORT).show();
                                 Log.d(TAG, e.toString());
                             }
                         });
@@ -105,7 +106,7 @@ public class Activity_trophy extends AppCompatActivity {
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
         startActivity(intent);
-        Activity_trophy.this.finish();
+        Activity_Trophies.this.finish();
     }
     public void openActivityResults() {
         finish();
@@ -115,17 +116,17 @@ public class Activity_trophy extends AppCompatActivity {
     public void openActivitySettings() {
         Intent intent = new Intent(this, activity_settings.class);
         startActivity(intent);
-        Activity_trophy.this.finish();
+        Activity_Trophies.this.finish();
     }
     public void openActivityConnexion() {
         Intent intent = new Intent(this, activity_connexion.class);
         startActivity(intent);
-        Activity_trophy.this.finish();
+        Activity_Trophies.this.finish();
     }
     public void openActivityProfil() {
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
-        Activity_trophy.this.finish();
+        Activity_Trophies.this.finish();
     }
     private void Logout() {
         firebaseAuth.signOut();
@@ -139,7 +140,7 @@ public class Activity_trophy extends AppCompatActivity {
     private void openContact(){
         Intent intent = new Intent(this, ContactWeightless.class);
         startActivity(intent);
-        Activity_trophy.this.finish();
+        Activity_Trophies.this.finish();
     }
 
     @Override

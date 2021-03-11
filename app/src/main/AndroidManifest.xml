@@ -8,7 +8,8 @@
         android:label="@string/name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ContactWeightless"></activity>
+        <activity android:name=".Activity_Trophies"></activity>
+        <activity android:name=".ContactWeightless" />
         <activity
             android:name=".Activity_trophy"
             android:label="@string/title_activity_trophy"

@@ -137,7 +137,7 @@ public class Profile extends AppCompatActivity {
         Profile.this.finish();
     }
     public void openBadges() {
-        Intent intent = new Intent(this, Activity_trophy.class);
+        Intent intent = new Intent(this, Activity_Trophies.class);
         startActivity(intent);
         Profile.this.finish();
     }
