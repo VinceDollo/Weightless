@@ -2,8 +2,13 @@ package innov.fr;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,7 +40,7 @@ public class Activity_registration extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     String name, phone, password, mail,uid;
     private static final String TAG = "Activity_registration";
-    private static final String KEY_t1 = "trophy1";
+    private static final String KEY_t1 = "trophy1",KEY_t2 = "trophy2";
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -77,6 +82,12 @@ public class Activity_registration extends AppCompatActivity {
                 }
             }
         });
+
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("My Notification", "My Notification", NotificationManager.IMPORTANCE_DEFAULT );
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
     }
     private void setUpUIViews(){
         userName = (EditText)findViewById(R.id.editTextRegusername);
@@ -142,8 +153,10 @@ public class Activity_registration extends AppCompatActivity {
         myRef.setValue(userProfile);
     }
     public void saveNote() {
+        addNotification();
         Map<String, Object> note = new HashMap<>();
         note.put(KEY_t1,"Un bon départ");
+        note.put(KEY_t2,"false");
         db.collection(uid).document("badges").set(note)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -158,5 +171,17 @@ public class Activity_registration extends AppCompatActivity {
                         Log.d(TAG, e.toString());
                     }
                 });
+    }
+
+    // Creates and displays a notification
+    private void addNotification() {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(Activity_registration.this,"My Notification");
+        builder.setContentTitle("Weightless");
+        builder.setContentText("Trophé débloqué");
+        builder.setSmallIcon(R.drawable.logo);
+        builder.setAutoCancel(true);
+
+        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(Activity_registration.this);
+        managerCompat.notify(1,builder.build());
     }
 }

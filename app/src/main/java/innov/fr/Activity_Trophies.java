@@ -31,9 +31,9 @@ public class Activity_Trophies extends AppCompatActivity {
 
     private Button button;
     private static final String TAG = "Activity_trophy";
-    private static final String KEY_t1 = "trophy1";
-    private ImageView iv1;
-    private TextView tv1;
+    private static final String KEY_t1 = "trophy1", KEY_t2 = "trophy2";
+    private ImageView iv1,iv2;
+    private TextView tv1,tv2;
     private String uid="Undefined";
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth firebaseAuth;
@@ -81,6 +81,8 @@ public class Activity_Trophies extends AppCompatActivity {
 
         iv1=findViewById(R.id.ivTrophy1);
         tv1=findViewById(R.id.tvTrophy1);
+        iv2=findViewById(R.id.ivTrophy2);
+        tv2=findViewById(R.id.tvTrophy2);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +97,10 @@ public class Activity_Trophies extends AppCompatActivity {
                                     if (!documentSnapshot.getString(KEY_t1).equals("false")) {
                                         iv1.setImageResource(R.drawable.logo);
                                         tv1.setText(documentSnapshot.getString(KEY_t1));
+                                    }
+                                    if (!documentSnapshot.getString(KEY_t2).equals("false")) {
+                                        iv2.setImageResource(R.drawable.logo);
+                                        tv2.setText(documentSnapshot.getString(KEY_t2));
                                     }
                                 }
                                 else{
