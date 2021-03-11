@@ -13,4 +13,10 @@
         app:showAsAction="never"
         android:title="Donner mon avis">
     </item>
+    <item
+        android:id="@+id/acceuilMenu"
+        android:orderInCategory="300"
+        app:showAsAction="never"
+        android:title="Menu Principal">
+    </item>
 </menu>

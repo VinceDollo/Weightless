@@ -136,11 +136,20 @@ public class Activity_trophy extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu,menu);
         return true;
     }
+    private void openContact(){
+        Intent intent = new Intent(this, ContactWeightless.class);
+        startActivity(intent);
+        Activity_trophy.this.finish();
+    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.logoutMenu:{
                 Logout();
+            }
+            case R.id.adviceMenu:{
+                openContact();
             }
         }
         return super.onOptionsItemSelected(item);
