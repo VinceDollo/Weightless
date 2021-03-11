@@ -2,8 +2,15 @@ package innov.fr;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -78,6 +85,8 @@ public class Activity_Trophies extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                addNotification();
+                Toast.makeText(Activity_Trophies.this, "texttt", Toast.LENGTH_SHORT).show();
                 db.collection(uid).document("badges").get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override
@@ -102,6 +111,12 @@ public class Activity_Trophies extends AppCompatActivity {
                         });
             }
         });
+
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("My Notification", "My Notification",NotificationManager.IMPORTANCE_DEFAULT );
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
     }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
@@ -118,6 +133,23 @@ public class Activity_Trophies extends AppCompatActivity {
         startActivity(intent);
         Activity_Trophies.this.finish();
     }
+
+
+    // Creates and displays a notification
+    private void addNotification() {
+       NotificationCompat.Builder builder = new NotificationCompat.Builder(Activity_Trophies.this,"My Notification");
+       builder.setContentTitle("Weightless");
+       builder.setContentText("Chargement trophés réalisé");
+       builder.setSmallIcon(R.drawable.logo);
+       builder.setAutoCancel(true);
+
+        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(Activity_Trophies.this);
+        managerCompat.notify(1,builder.build());
+    }
+
+
+
+
     public void openActivityConnexion() {
         Intent intent = new Intent(this, activity_connexion.class);
         startActivity(intent);
