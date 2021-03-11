@@ -3,9 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/logoutMenu"
-        android:icon="@drawable/logo"
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title="Déconnexion">
+    </item>
+    <item
+        android:id="@+id/adviceMenu"
+        android:orderInCategory="200"
+        app:showAsAction="never"
+        android:title="Donner mon avis">
     </item>
 </menu>
