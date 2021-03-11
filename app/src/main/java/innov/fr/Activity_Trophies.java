@@ -34,7 +34,7 @@ public class Activity_Trophies extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trophy);
+        setContentView(R.layout.activity__trophies);
         button = findViewById(R.id.btn_weight);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
