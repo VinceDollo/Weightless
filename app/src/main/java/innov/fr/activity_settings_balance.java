@@ -1,24 +1,29 @@
 package innov.fr;
+
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class activity_settings extends AppCompatActivity {
+public class activity_settings_balance extends AppCompatActivity {
+
     private Button button;
+    private EditText nomWifi;
+    private EditText mdpWifi;
     private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_settings_balance);
 
         firebaseAuth=FirebaseAuth.getInstance();
 
@@ -54,100 +59,52 @@ public class activity_settings extends AppCompatActivity {
             }
         });
 
-        button = findViewById((R.id.language_settings_button));
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivityLanguages();
-            }
-        });
+        nomWifi = findViewById(R.id.textwifi);
+        mdpWifi = findViewById(R.id.textWifi);
 
-        button = findViewById((R.id.btnhelp));
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivityAide();
-            }
-        });
-
-        button = findViewById((R.id.Themes_button));
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivityTheme();
-            }
-        });
-
-        button = findViewById(R.id.buttondeco);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Logout();
-            }
-        });
-
-        button = findViewById(R.id.balance_settings_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivitySettingBalance();
-            }
-        });
+        button = findViewById(R.id.btnwifi);
 
     }
+
+
+
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
         startActivity(intent);
-        activity_settings.this.finish();
+        activity_settings_balance.this.finish();
     }
+
     public void openActivityResults() {
         Intent intent = new Intent(this, activity_results.class);
         startActivity(intent);
-        activity_settings.this.finish();
+        activity_settings_balance.this.finish();
     }
+
     public void openActivitySettings() {
-        finish();
         Intent intent = new Intent(this, activity_settings.class);
         startActivity(intent);
+        activity_settings_balance.this.finish();
     }
 
-    public void openActivityLanguages() {
-        Intent intent = new Intent(this, activity_settings_languages.class);
-        startActivity(intent);
-        activity_settings.this.finish();
-    }
-
-    public void openActivityAide() {
-        Intent intent = new Intent(this, activity_settings_aide.class);
-        startActivity(intent);
-        activity_settings.this.finish();
-    }
-
-    public void openActivityTheme() {
-        Intent intent = new Intent(this, activity_settings_themes.class);
-        startActivity(intent);
-        activity_settings.this.finish();
-    }
     public void openActivityConnexion() {
         Intent intent = new Intent(this, activity_connexion.class);
         startActivity(intent);
-        activity_settings.this.finish();
+        activity_settings_balance.this.finish();
     }
+
     public void openActivityProfil() {
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
-        activity_settings.this.finish();
+        activity_settings_balance.this.finish();
     }
-
-    public void openActivitySettingBalance() {
-        Intent intent = new Intent(this, activity_settings_balance.class);
-        startActivity(intent);
-        activity_settings.this.finish();
-    }
-
     private void Logout() {
         firebaseAuth.signOut();
         openActivityConnexion();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
     }
 
     @Override
@@ -160,6 +117,4 @@ public class activity_settings extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
-
-
 

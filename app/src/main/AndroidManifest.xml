@@ -16,6 +16,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UpdatePassword" />
         <activity android:name=".UpdateProfile" />
+        <activity android:name=".activity_settings_balance" />
         <activity android:name=".Profile" />
         <activity android:name=".PasswordActivity" />
         <activity android:name=".Activity_registration" />
