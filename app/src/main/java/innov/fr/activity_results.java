@@ -1,6 +1,9 @@
 package innov.fr;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,6 +12,9 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +34,8 @@ import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class activity_results extends AppCompatActivity {
     private Button button;
@@ -35,7 +43,7 @@ public class activity_results extends AppCompatActivity {
     private TextView tvres1, tvres2,tvres3, tvres4,tvres5, tvresMoy,tvresnbm;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "activity_results";
-    private static final String KEY_DAY = "day", KEY_MONTH = "month", KEY_POIDS="poids", KEY_YEAR="year";
+    private static final String KEY_DAY = "day", KEY_MONTH = "month", KEY_POIDS="poids", KEY_YEAR="year",KEY_t3="trophy3";
     private FirebaseDatabase firebaseDatabase;
     private String username = "Undefined",uid="Undefined";
     private String numberPoubelle = "Undefined";
@@ -118,6 +126,12 @@ public class activity_results extends AppCompatActivity {
         graph.getGridLabelRenderer().setVerticalAxisTitle("Poids( en kg)");
 
         uid=firebaseAuth.getUid();
+
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("My Notification", "My Notification", NotificationManager.IMPORTANCE_DEFAULT );
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
     }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
@@ -154,6 +168,7 @@ public class activity_results extends AppCompatActivity {
         return true;
     }
     public void loadNote(View v){
+        saveNote();
         graph.removeAllSeries();
         db.collection(uid).document("poubellen"+String.valueOf(compteur)).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -350,6 +365,26 @@ public class activity_results extends AppCompatActivity {
         graph.addSeries(series);
         graph.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);
     }
+    public void saveNote() {
+        addNotification();
+        Map<String, Object> note = new HashMap<>();
+        note.put(KEY_t3,"Analyste");
+
+        db.collection(uid).document("badges").update(note)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(activity_results.this, "Sucess", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(activity_results.this, "Fail", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, e.toString());
+                    }
+                });
+    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -359,6 +394,17 @@ public class activity_results extends AppCompatActivity {
             }
         }
         return super.onOptionsItemSelected(item);
+    }
+    // Creates and displays a notification
+    private void addNotification() {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(activity_results.this,"My Notification");
+        builder.setContentTitle("Weightless");
+        builder.setContentText("Trophé débloqué");
+        builder.setSmallIcon(R.drawable.logo);
+        builder.setAutoCancel(true);
+
+        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(activity_results.this);
+        managerCompat.notify(1,builder.build());
     }
 }
 

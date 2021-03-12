@@ -31,9 +31,9 @@ public class Activity_Trophies extends AppCompatActivity {
 
     private Button button;
     private static final String TAG = "Activity_trophy";
-    private static final String KEY_t1 = "trophy1", KEY_t2 = "trophy2";
-    private ImageView iv1,iv2;
-    private TextView tv1,tv2;
+    private static final String KEY_t1 = "trophy1", KEY_t2 = "trophy2",KEY_t3 = "trophy3", KEY_t4 = "trophy4";
+    private ImageView iv1,iv2,iv3,iv4;
+    private TextView tv1,tv2,tv3,tv4;
     private String uid="Undefined";
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth firebaseAuth;
@@ -83,6 +83,10 @@ public class Activity_Trophies extends AppCompatActivity {
         tv1=findViewById(R.id.tvTrophy1);
         iv2=findViewById(R.id.ivTrophy2);
         tv2=findViewById(R.id.tvTrophy2);
+        iv3=findViewById(R.id.ivTrophy3);
+        tv3=findViewById(R.id.tvTrophy3);
+        iv4=findViewById(R.id.ivTrophy4);
+        tv4=findViewById(R.id.tvTrophy4);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +105,14 @@ public class Activity_Trophies extends AppCompatActivity {
                                     if (!documentSnapshot.getString(KEY_t2).equals("false")) {
                                         iv2.setImageResource(R.drawable.trophy2);
                                         tv2.setText(documentSnapshot.getString(KEY_t2));
+                                    }
+                                    if (!documentSnapshot.getString(KEY_t3).equals("false")) {
+                                        iv3.setImageResource(R.drawable.logo);
+                                        tv3.setText(documentSnapshot.getString(KEY_t3));
+                                    }
+                                    if (!documentSnapshot.getString(KEY_t4).equals("false")) {
+                                        iv4.setImageResource(R.drawable.logo);
+                                        tv4.setText(documentSnapshot.getString(KEY_t4));
                                     }
                                 }
                                 else{

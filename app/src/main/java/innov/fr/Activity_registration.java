@@ -40,7 +40,7 @@ public class Activity_registration extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     String name, phone, password, mail,uid;
     private static final String TAG = "Activity_registration";
-    private static final String KEY_t1 = "trophy1",KEY_t2 = "trophy2";
+    private static final String KEY_t1 = "trophy1",KEY_t2 = "trophy2",KEY_t3 = "trophy3",KEY_t4 = "trophy4";
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -157,6 +157,8 @@ public class Activity_registration extends AppCompatActivity {
         Map<String, Object> note = new HashMap<>();
         note.put(KEY_t1,"Un bon départ");
         note.put(KEY_t2,"false");
+        note.put(KEY_t3,"false");
+        note.put(KEY_t4,"false");
         db.collection(uid).document("badges").set(note)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
