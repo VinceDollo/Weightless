@@ -31,9 +31,10 @@ public class Activity_Trophies extends AppCompatActivity {
 
     private Button button;
     private static final String TAG = "Activity_trophy";
-    private static final String KEY_t1 = "trophy1", KEY_t2 = "trophy2",KEY_t3 = "trophy3", KEY_t4 = "trophy4";
-    private ImageView iv1,iv2,iv3,iv4;
-    private TextView tv1,tv2,tv3,tv4;
+    private static final String KEY_t1 = "trophy1", KEY_t2 = "trophy2",KEY_t3 = "trophy3", KEY_t4 = "trophy4"
+            ,KEY_t5 = "trophy5", KEY_t6 = "trophy6",KEY_t7 = "trophy7", KEY_t8 = "trophy8";
+    private ImageView iv1,iv2,iv3,iv4,iv5,iv6,iv7,iv8;
+    private TextView tv1,tv2,tv3,tv4,tv5,tv6,tv7,tv8;
     private String uid="Undefined";
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth firebaseAuth;
@@ -87,6 +88,14 @@ public class Activity_Trophies extends AppCompatActivity {
         tv3=findViewById(R.id.tvTrophy3);
         iv4=findViewById(R.id.ivTrophy4);
         tv4=findViewById(R.id.tvTrophy4);
+        iv5=findViewById(R.id.ivTrophy5);
+        tv5=findViewById(R.id.tvTrophy5);
+        iv6=findViewById(R.id.ivTrophy6);
+        tv6=findViewById(R.id.tvTrophy6);
+        iv7=findViewById(R.id.ivTrophy7);
+        tv7=findViewById(R.id.tvTrophy7);
+        iv8=findViewById(R.id.ivTrophy8);
+        tv8=findViewById(R.id.tvTrophy8);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,6 +122,22 @@ public class Activity_Trophies extends AppCompatActivity {
                                     if (!documentSnapshot.getString(KEY_t4).equals("false")) {
                                         iv4.setImageResource(R.drawable.logo);
                                         tv4.setText(documentSnapshot.getString(KEY_t4));
+                                    }
+                                    if (!documentSnapshot.getString(KEY_t5).equals("false")) {
+                                        iv5.setImageResource(R.drawable.logo);
+                                        tv5.setText(documentSnapshot.getString(KEY_t5));
+                                    }
+                                    if (!documentSnapshot.getString(KEY_t6).equals("false")) {
+                                        iv6.setImageResource(R.drawable.logo);
+                                        tv6.setText(documentSnapshot.getString(KEY_t6));
+                                    }
+                                    if (!documentSnapshot.getString(KEY_t7).equals("false")) {
+                                        iv7.setImageResource(R.drawable.logo);
+                                        tv7.setText(documentSnapshot.getString(KEY_t7));
+                                    }
+                                    if (!documentSnapshot.getString(KEY_t8).equals("false")) {
+                                        iv8.setImageResource(R.drawable.logo);
+                                        tv8.setText(documentSnapshot.getString(KEY_t8));
                                     }
                                 }
                                 else{
