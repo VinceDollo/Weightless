@@ -116,27 +116,27 @@ public class Activity_Trophies extends AppCompatActivity {
                                         tv2.setText(documentSnapshot.getString(KEY_t2));
                                     }
                                     if (!documentSnapshot.getString(KEY_t3).equals("false")) {
-                                        iv3.setImageResource(R.drawable.logo);
+                                        iv3.setImageResource(R.drawable.trophy3);
                                         tv3.setText(documentSnapshot.getString(KEY_t3));
                                     }
                                     if (!documentSnapshot.getString(KEY_t4).equals("false")) {
-                                        iv4.setImageResource(R.drawable.logo);
+                                        iv4.setImageResource(R.drawable.trophy4);
                                         tv4.setText(documentSnapshot.getString(KEY_t4));
                                     }
                                     if (!documentSnapshot.getString(KEY_t5).equals("false")) {
-                                        iv5.setImageResource(R.drawable.logo);
+                                        iv5.setImageResource(R.drawable.trophy5);
                                         tv5.setText(documentSnapshot.getString(KEY_t5));
                                     }
                                     if (!documentSnapshot.getString(KEY_t6).equals("false")) {
-                                        iv6.setImageResource(R.drawable.logo);
+                                        iv6.setImageResource(R.drawable.trophy6);
                                         tv6.setText(documentSnapshot.getString(KEY_t6));
                                     }
                                     if (!documentSnapshot.getString(KEY_t7).equals("false")) {
-                                        iv7.setImageResource(R.drawable.logo);
+                                        iv7.setImageResource(R.drawable.trophy7);
                                         tv7.setText(documentSnapshot.getString(KEY_t7));
                                     }
                                     if (!documentSnapshot.getString(KEY_t8).equals("false")) {
-                                        iv8.setImageResource(R.drawable.logo);
+                                        iv8.setImageResource(R.drawable.trophy8);
                                         tv8.setText(documentSnapshot.getString(KEY_t8));
                                     }
                                 }

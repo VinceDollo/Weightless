@@ -1,5 +1,8 @@
 package innov.fr;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.Build;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,6 +11,9 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -39,6 +45,7 @@ public class activity_weight extends AppCompatActivity {
     private String phone = "Undefined";
     private String numberPoubelle = "Undefined";
     private int cpb=0;
+    private static final String KEY_t5 = "trophy5",KEY_t6 = "trophy6",KEY_t7 = "trophy7",KEY_t8 = "trophy8";
     private FirebaseDatabase firebaseDatabase;
     private FirebaseUser firebaseUser;
     DatabaseReference databaseReference;
@@ -113,6 +120,11 @@ public class activity_weight extends AppCompatActivity {
             }
         });
         uid=firebaseAuth.getUid();
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("My Notification", "My Notification", NotificationManager.IMPORTANCE_DEFAULT );
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
     }
 
     public void saveNote(View v) {
@@ -139,8 +151,49 @@ public class activity_weight extends AppCompatActivity {
                     }
                 });
     }
+    // Creates and displays a notification
+    private void addNotification() {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(activity_weight.this,"My Notification");
+        builder.setContentTitle("Weightless");
+        builder.setContentText("Trophé débloqué");
+        builder.setSmallIcon(R.drawable.logo);
+        builder.setAutoCancel(true);
+
+        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(activity_weight.this);
+        managerCompat.notify(1,builder.build());
+    }
     public void addPoubelle(View v) {
         cpb++;
+        if((cpb==5)||(cpb==20)||(cpb==50)||(cpb==100)){
+            addNotification();
+            Map<String, Object> note = new HashMap<>();
+            if(cpb==5){
+                note.put(KEY_t5,"Recycleur débutant");
+            }
+            else if(cpb==20){
+                note.put(KEY_t6,"Recycleur occasionel");
+            }
+            else if(cpb==50){
+                note.put(KEY_t7,"Recycleur accompli");
+            }
+            else {
+                note.put(KEY_t8,"Légende vivante");
+            }
+            db.collection(uid).document("badges").update(note)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(activity_weight.this, "Sucess", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(activity_weight.this, "Fail", Toast.LENGTH_SHORT).show();
+                            Log.d(TAG, e.toString());
+                        }
+                    });
+        }
         UserProfile userProfile = new UserProfile(username,firebaseUser.getEmail(),phone,cpb);
         databaseReference.setValue(userProfile);
     }
