@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,8 +35,12 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class activity_results extends AppCompatActivity {
@@ -57,6 +63,8 @@ public class activity_results extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_results);
         button = findViewById(R.id.btn_weight);
         button.setOnClickListener(new View.OnClickListener() {
@@ -122,8 +130,12 @@ public class activity_results extends AppCompatActivity {
         graph = (GraphView) findViewById(R.id.graph);
         graph.setTitle("Evolution de mes dernières pesées");
         graph.setTitleColor(Color.GREEN);
-        graph.getGridLabelRenderer().setHorizontalAxisTitle("Date mesure (dd/MM)");
-        graph.getGridLabelRenderer().setVerticalAxisTitle("Poids( en kg)");
+        graph.getGridLabelRenderer().setHorizontalAxisTitleTextSize(30);
+        graph.getGridLabelRenderer().setVerticalAxisTitleTextSize(30);
+        graph.getGridLabelRenderer().setHorizontalAxisTitle("\nDate mesure (dd-MM)");
+        graph.getGridLabelRenderer().setVerticalAxisTitle("Poids(en kg)");
+        graph.getGridLabelRenderer().setTextSize(20);
+
 
         uid=firebaseAuth.getUid();
 
@@ -180,7 +192,8 @@ public class activity_results extends AppCompatActivity {
                             String year = documentSnapshot.getString(KEY_YEAR);
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
-                            tvres1.setText("Poubelle 1 : Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur));
+                            tvres1.setText("Poubelle 1 : Date = "+day+" "+month+" "+year+", poids = "+poids+"kg"
+                            );
                             if (Integer.parseInt(poids)!=value0){
                                 nbMesures++;
                                 value0=Integer.parseInt(poids);
@@ -211,7 +224,7 @@ public class activity_results extends AppCompatActivity {
                             String year = documentSnapshot.getString(KEY_YEAR);
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
-                            tvres2.setText("Poubelle 2: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-1));
+                            tvres2.setText("Poubelle 2: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg");
                             if (Integer.parseInt(poids)!=value1){
                                 nbMesures++;
                                 value1=Integer.parseInt(poids);
@@ -241,7 +254,7 @@ public class activity_results extends AppCompatActivity {
                             String year = documentSnapshot.getString(KEY_YEAR);
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
-                            tvres3.setText("Poubelle 3: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-2));
+                            tvres3.setText("Poubelle 3: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg");
                             if (Integer.parseInt(poids)!=value2){
                                 nbMesures++;
                                 value2=Integer.parseInt(poids);
@@ -271,7 +284,7 @@ public class activity_results extends AppCompatActivity {
                             String year = documentSnapshot.getString(KEY_YEAR);
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
-                            tvres4.setText("Poubelle 4: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-3));
+                            tvres4.setText("Poubelle 4: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg");
                             if (Integer.parseInt(poids)!=value3){
                                 nbMesures++;
                                 value3=Integer.parseInt(poids);
@@ -301,7 +314,7 @@ public class activity_results extends AppCompatActivity {
                             String year = documentSnapshot.getString(KEY_YEAR);
                             String poids = documentSnapshot.getString(KEY_POIDS);
 
-                            tvres5.setText("Poubelle 5: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg \n Poubelle ID : "+"poubellen"+String.valueOf(compteur-4));
+                            tvres5.setText("Poubelle 5: Date = "+day+" "+month+" "+year+", poids = "+poids+"kg");
                             if (Integer.parseInt(poids)!=value4){
                                 nbMesures++;
                                 value4=Integer.parseInt(poids);
