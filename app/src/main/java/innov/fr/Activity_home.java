@@ -113,6 +113,8 @@ public class Activity_home extends AppCompatActivity {
 
 
     }
+
+
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
         startActivity(intent);

@@ -25,12 +25,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.080"/>
 
-    //CHARGEMENT DONNÉES
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="100dp">
     
         <Button
             android:id="@+id/buttonresultsGO"
@@ -38,20 +32,29 @@
             android:layout_height="wrap_content"
             android:text="Charger mes 5 derniers résultats"
             android:textSize="10dp"
-            android:layout_gravity="center"
-            android:onClick="loadNote"/>
+            android:onClick="loadNote"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.20"/>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="50px"
-            android:layout_marginRight="50px"
             android:background="@color/grey"
-            android:layout_height="120dp">
+            android:layout_height="120dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.30">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="15dp"
                 android:orientation="vertical" >
 
             <TextView
@@ -123,18 +126,37 @@
             android:text="Charger le graphique"
             android:textSize="10dp"
             android:layout_gravity="center"
-            android:onClick="loadNote"/>
+            android:onClick="loadNote"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.50"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prix total a payer : ???"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.50"/>
 
         <com.jjoe64.graphview.GraphView
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.75"
             android:layout_width="match_parent"
             android:layout_height="420px"
             android:id="@+id/graph" />
-
-
-    </LinearLayout>
 
     <!-- BARRE D'OUTILS -->
     <!-- Bouton poids -->

@@ -16,6 +16,7 @@ import androidx.core.app.NotificationManagerCompat;
 
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,12 +30,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.UnknownHostException;
+import java.nio.ByteBuffer;
+import java.nio.channels.SocketChannel;
+import java.nio.charset.Charset;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class activity_weight extends AppCompatActivity {
     private Button button;
+    private TextView textView;
     private FirebaseAuth firebaseAuth;
     private static final String TAG = "activity_weight";
     private EditText etpoids;
@@ -49,7 +57,6 @@ public class activity_weight extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private FirebaseUser firebaseUser;
     DatabaseReference databaseReference;
-
     String currentTime = Calendar.getInstance().getTime().toString();
     String[] valueTime = currentTime.split(" ");
     String day = valueTime[2];
@@ -60,6 +67,9 @@ public class activity_weight extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight);
+
+        textView = findViewById(R.id.test);
+
         button = findViewById(R.id.btn_weight);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +106,14 @@ public class activity_weight extends AppCompatActivity {
 
         button = findViewById(R.id.buttonweightGO);
         button = findViewById(R.id.buttonweightADDPB);
+        button = findViewById(R.id.buttonESP);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getWeightFormEsp();
+            }
+        });
+
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
@@ -197,6 +215,51 @@ public class activity_weight extends AppCompatActivity {
         UserProfile userProfile = new UserProfile(username,firebaseUser.getEmail(),phone,cpb);
         databaseReference.setValue(userProfile);
     }
+
+
+    private void getWeightFormEsp()  {
+        new Thread(){
+            public void run(){
+                Charset charset = Charset.forName("UTF-8");
+                ByteBuffer buffer = ByteBuffer.allocate(2045);
+                int port = 51000;
+                String[] temp = Shared.getIpAddress(getApplicationContext()).split("\\.");
+                String target = temp[0]+"."+temp[1]+"."+temp[2]+"."+"253";
+                try{
+                    SocketChannel client = SocketChannel.open();
+                    client.connect(new InetSocketAddress(target, 52000));
+                    client.write(charset.encode("get"));
+                    while(true)
+                        if(client.read(buffer)>0){
+                            buffer.flip();
+                            String res = new String(buffer.array());
+                            final double weight = Double.valueOf(res);
+                            //System.out.println(weight);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    textView.setText(String.valueOf(weight));
+                                }
+                            });
+                            buffer.clear();
+                            break;
+                        }
+                    client.close();
+                }catch (UnknownHostException e){
+                    e.printStackTrace();
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+            }
+
+
+        }.start();
+
+
+    }
+
+
+
     public void openActivityWeight() {
         finish();
         Intent intent = new Intent(this, activity_weight.class);

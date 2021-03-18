@@ -57,6 +57,31 @@
             android:text="Ajouter une poubelle"
             android:layout_gravity="center"
             android:onClick="addPoubelle"/>
+
+        <Button
+            android:id="@+id/buttonESP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="ESP"
+            android:layout_gravity="center"
+            android:onClick="addPoubelle"/>
+
+
+        <TextView
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Texte ou il y a le poids obtenu avec l'ESP"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.080"/>
     </LinearLayout>
 
 
