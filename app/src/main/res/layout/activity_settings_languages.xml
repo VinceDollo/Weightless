@@ -17,7 +17,7 @@
             android:id="@+id/Weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/language"
+            android:text="@string/Langue"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/black"
             android:textSize="25sp"
@@ -33,18 +33,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="Choississez votre langue :"
+            android:text="@string/langues_desc"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.25" />
-
-
-
-
 
         <!-- BARRE D'OUTILS -->
         <!-- Bouton poids -->
@@ -221,39 +217,4 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
-        <!-- Bouton choix de langue -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-                <Button
-                    android:id="@+id/buttonANG"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_toLeftOf="@+id/buttonESP"
-                    android:background="@drawable/backbutton"
-                    android:text="@string/Anglais" />
-
-                <Button
-                    android:id="@+id/buttonESP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_marginRight="30dp"
-                    android:background="@drawable/backbutton"
-                    android:text="@string/Espagnol" />
-
-                <Button
-                    android:id="@+id/buttonALL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@+id/buttonESP"
-                    android:background="@drawable/backbutton"
-                    android:text="@string/Allemand"
-                    tools:ignore="MissingConstraints" />
-
-        </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

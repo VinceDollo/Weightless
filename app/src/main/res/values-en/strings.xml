@@ -5,10 +5,6 @@
     <string name="results">Results</string>
     <string name="connexion">Connection</string>
     <string name="mdpoublié">Forgot your password</string>
-    <string name="balance_settings">Settings of the balance</string>
-    <string name="language">Language</string>
-    <string name="help">Help</string>
-    <string name="themes">Themes</string>
     <string name="profil">Profile</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="Terms_of_use">Terms of use</string>
@@ -31,7 +27,6 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="parametre_balance">Balance params</string>
-    <string name="wifi">WiFi</string>
     <string name="nom_wifi">WiFi name</string>
     <string name="badges">My badges</string>
     <string name="load_badges">Load my badges</string>
@@ -57,4 +52,7 @@
     <string name="help_activity">This is help activity</string>
     <string name="contact_opinion">Tap here your opinion</string>
     <string name="contact_send">Send</string>
+    <string name="home_welcome">Welcome on Weightless app</string>
+    <string name="home_desc">"On this app, you no longer have to worry about incentive pricing. Weightless allows you to calculate the cost of your waste in order to better manage your budget. "</string>
+    <string name="langues_desc">"Our app is available in 3 languages at the moment (French, English and Spanish), but new ones will be available soon! To change the language, go to your phone settings and choose the language you want! "</string>
 </resources>

@@ -53,14 +53,6 @@ public class activity_settings_languages extends AppCompatActivity {
             }
         });
 
-        button = findViewById(R.id.buttonANG);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivityLanguageANG();
-            }
-        });
-
         firebaseAuth= FirebaseAuth.getInstance();
     }
 
@@ -76,12 +68,6 @@ public class activity_settings_languages extends AppCompatActivity {
     }
     public void openActivitySettings() {
         Intent intent = new Intent(this, activity_settings.class);
-        startActivity(intent);
-        activity_settings_languages.this.finish();
-    }
-
-    public void openActivityLanguageANG() {
-        Intent intent = new Intent(this, activity_settings_languages_ang.class);
         startActivity(intent);
         activity_settings_languages.this.finish();
     }
