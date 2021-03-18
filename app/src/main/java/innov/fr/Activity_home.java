@@ -12,10 +12,18 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.UnknownHostException;
+import java.nio.ByteBuffer;
+import java.nio.channels.SocketChannel;
+import java.nio.charset.Charset;
+
 public class Activity_home extends AppCompatActivity {
 
-    private Button button;
+    private Button button, btnGo;
     private FirebaseAuth firebaseAuth;
+    private String resultat = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,13 +64,54 @@ public class Activity_home extends AppCompatActivity {
             }
         });
 
-        button = findViewById(R.id.btn_Go1);
-        button.setOnClickListener(new View.OnClickListener() {
+        btnGo = findViewById(R.id.btn_Go1);
+        btnGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivityWeight();
             }
         });
+    }
+
+    private void getWeightFormEsp()  {
+        new Thread(){
+            public void run(){
+                Charset charset = Charset.forName("UTF-8");
+                ByteBuffer buffer = ByteBuffer.allocate(2045);
+                int port = 51000;
+                String[] temp = Shared.getIpAddress(getApplicationContext()).split("\\.");
+                String target = temp[0]+"."+temp[1]+"."+temp[2]+"."+"253";
+                try{
+                    SocketChannel client = SocketChannel.open();
+                    client.connect(new InetSocketAddress(target, 52000));
+                    client.write(charset.encode("get"));
+                    while(true)
+                        if(client.read(buffer)>0){
+                            buffer.flip();
+                            String res = new String(buffer.array());
+                            final double weight = Double.valueOf(res);
+                            //System.out.println(weight);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    resultat = String.valueOf(weight);
+                                }
+                            });
+                            buffer.clear();
+                            break;
+                        }
+                    client.close();
+                }catch (UnknownHostException e){
+                    e.printStackTrace();
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+            }
+
+
+        }.start();
+
+
     }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);

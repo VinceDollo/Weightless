@@ -31,76 +31,98 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_marginTop="100dp">
-
+    
         <Button
             android:id="@+id/buttonresultsGO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Charger mes 5 derniers résultats"
+            android:textSize="10dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
             android:onClick="loadNote"/>
 
-        <TextView
-            android:id="@+id/tvresultsPB1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="poubelle 1 : Undefined"
-            android:textColor="@color/black" />
-        <TextView
-            android:id="@+id/tvresultsPB2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="poubelle 2 : Undefined"
-            android:textColor="@color/black"/>
-        <TextView
-            android:id="@+id/tvresultsPB3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="poubelle 3 : Undefined"
-            android:textColor="@color/black"/>
-        <TextView
-            android:id="@+id/tvresultsPB4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="poubelle 4 : Undefined"
-            android:textColor="@color/black"/>
-        <TextView
-            android:id="@+id/tvresultsPB5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="poubelle 5 : Undefined"
-            android:textColor="@color/black" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/tvresultsPBMoy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="Moyenne = Undefined"
-            android:layout_marginRight="5dp"
-            android:textColor="@color/black" />
-        <TextView
-            android:id="@+id/tvresultsPBNbMes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="Nombre mesures = Undefined"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/black" />
-    </LinearLayout>
-        <com.jjoe64.graphview.GraphView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="200dip"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:background="@color/grey"
+            android:layout_height="120dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvresultsPB1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="poubelle 1 : Undefined"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/tvresultsPB2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="poubelle 2 : Undefined"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tvresultsPB3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="poubelle 3 : Undefined"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tvresultsPB4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="poubelle 4 : Undefined"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tvresultsPB5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="poubelle 5 : Undefined"
+                android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvresultsPBMoy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Moyenne = Undefined"
+                        android:layout_marginRight="5dp"
+                        android:textColor="@color/black" />
+                    <TextView
+                        android:id="@+id/tvresultsPBNbMes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Nombre mesures = Undefined"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <com.jjoe64.graphview.GraphView
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="520px"
             android:id="@+id/graph" />
     </LinearLayout>
 
