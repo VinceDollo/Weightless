@@ -8,6 +8,7 @@
         android:icon="@drawable/logo"
         android:label="@string/name"
         android:supportsRtl="true"
+        android:screenOrientation = "portrait"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity_Trophies"></activity>
         <activity android:name=".ContactWeightless" />

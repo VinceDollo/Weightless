@@ -99,6 +99,8 @@ public class activity_results extends AppCompatActivity {
         });
 
         button = findViewById(R.id.buttonresultsGO);
+        button = findViewById(R.id.buttongraph);
+
 
         tvres1 = findViewById(R.id.tvresultsPB1);
         tvres2 = findViewById(R.id.tvresultsPB2);
@@ -191,7 +193,6 @@ public class activity_results extends AppCompatActivity {
                             String month = documentSnapshot.getString(KEY_MONTH);
                             String year = documentSnapshot.getString(KEY_YEAR);
                             String poids = documentSnapshot.getString(KEY_POIDS);
-
                             tvres1.setText("Poubelle 1 : Date = "+day+" "+month+" "+year+", poids = "+poids+"kg"
                             );
                             if (Integer.parseInt(poids)!=value0){
