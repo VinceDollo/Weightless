@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:layout_marginLeft="10dp"
-            android:text="name : " />
+            android:text="@string/profile_name" />
 
         <TextView
             android:id="@+id/tvProfilemail"
@@ -48,7 +48,7 @@
             android:layout_marginTop="10dp"
             android:textSize="20dp"
             android:layout_marginLeft="10dp"
-            android:text="email : " />
+            android:text="@string/profile_mail" />
 
         <TextView
             android:id="@+id/tvProfilephone"
@@ -57,7 +57,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:textSize="20dp"
-            android:text="phone : " />
+            android:text="@string/profile_phone" />
         <TextView
             android:id="@+id/tvProfilecount"
             android:layout_width="match_parent"
@@ -65,25 +65,25 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:textSize="20dp"
-            android:text="Nombre de poubelles : " />
+            android:text="@string/profile_nb_pb" />
 
         <Button
             android:id="@+id/buttonUpdateProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Update" />
+            android:text="@string/profile_update" />
 
         <Button
             android:id="@+id/buttonchangemdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Changer mon mdp" />
+            android:text="@string/update_password_edit" />
         <Button
             android:id="@+id/buttonaccesbadges"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Accéder à mes badges" />
+            android:text="@string/profile_go_badges" />
 
     </LinearLayout>
 

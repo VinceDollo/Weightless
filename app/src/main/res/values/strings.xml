@@ -1,14 +1,87 @@
 <resources>
-    <string name="title_activity_trophy">Activity_trophy</string>
+    <string name="title_activity_trophy" translatable="false">Activity_trophy</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next">Suivant</string>
+    <string name="previous">Précédent</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="parametre_balance">Paramètre Balance</string>
-    <string name="wifi">Wifi</string>
-    <string name="nom_wifi">Nom WIFI</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="parametre_balance">Paramètres de la balance</string>
+    <string name="wifi" translatable="false">WiFi</string>
+    <string name="nom_wifi">Nom du WIFI</string>
+    <string name="name" translatable="false">Weightless</string>
+    <string name="weight">Poids</string>
+    <string name="GO" translatable="false">GO</string>
+    <string name="settings">Paramètres</string>
+    <string name="results">Résultats</string>
+    <string name="connexion">Connexion</string>
+    <string name="mdpoublié">Mot de passe oublié</string>
+    <string name="balance_settings">Paramètres de la balance</string>
+    <string name="language">Langue</string>
+    <string name="help">Aide</string>
+    <string name="themes">Thèmes</string>
+    <string name="profil">Mon profil</string>
+    <string name="privacy_policy">Paramètre de confidentialité</string>
+    <string name="Terms_of_use">Conditions d"'"utilisation</string>
+    <string name="account">Mon compte</string>
+    <string name="identifiant">Identifiant</string>
+    <string name="email">Email</string>
+    <string name="creation">Création de Compte</string>
+    <string name="mdp">Mot de passe</string>
+    <string name="seConnecter">Se connecter</string>
+    <string name="CreerCompte">Créer mon compte</string>
+    <string name="Langue">Langue</string>
+    <string name="Aide">Aide</string>
+    <string name="Themes">Thèmes</string>
+    <string name="Anglais" translatable="false">English</string>
+    <string name="Espagnol" translatable="false">Español</string>
+    <string name="Allemand" translatable="false">Deutsche</string>
+    <string name="Français" translatable="false">Français</string>
+
+
+    <string name="img_description_logo_weightless">Image weigthless</string>
+    <string name="img_description_weight">Image poids</string>
+    <string name="img_description_fleche">Image Fleche verte écran accueil</string>
+    <string name="img_description_settings">Image paramètres</string>
+    <string name="img_description_connexion">Image Connexion</string>
+
+
+    <string name="a11">Fleche verte</string>
+
+    <!-->Page trophés<-->
+    <string name="badges">Mes badges</string>
+    <string name="load_badges">Charger mes badges</string>
+    <string name="badges_unlock">Pas débloqué</string>
+    <string name="badges_1">Créé ton compte</string>
+    <string name="badges_2">Crée ta 5 ème poubelle</string>
+    <string name="badges_3">Crée ta 20 ème poubelle</string>
+    <string name="badges_4">Crée ta 50 ème poubelle</string>
+    <string name="badges_5">Crée ta 100 ème poubelle</string>
+    <string name="badges_next_infos">Plus de trophés à venir ! ;)</string>
+    <string name="badges_6">Donne nous ton avis</string>
+    <string name="badges_7">Regardes ton historique</string>
+    <string name="badges_8">Changes de pseudo</string>
+
+    <!-->Page Update Password<-->
+    <string name="update_password">Mot de passe</string>
+    <string name="update_password_edit">Changer mon mot de passe</string>
+
+    <!-->Page Mon profil<-->
+    <string name="profile_name">Nom : </string>
+    <string name="profile_mail">Mail : </string>
+    <string name="profile_phone">Téléphone : </string>
+    <string name="profile_nb_pb">Nombre de poubelles : </string>
+    <string name="profile_update">Mettre à jour</string>
+    <string name="profile_go_badges">Accéder à mes badges</string>
+
+    <!-->Page Aide<-->
+    <string name="help_activity">Ceci est l"'"activité aide</string>
+
+    <!-->Page Contact WL<-->
+    <string name="contact_desc">Nous contacter</string>
+    <string name="contact_opinion">Tapez ici votre avis</string>
+    <string name="contact_send">Envoyer</string>
+
 </resources>

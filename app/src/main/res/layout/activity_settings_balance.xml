@@ -52,7 +52,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/back"
-        android:hint="WIFI"
+        android:hint="@string/wifi"
         android:paddingLeft="10dp"
         android:singleLine="true"
         android:paddingRight="10dp"
