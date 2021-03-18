@@ -59,35 +59,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="poubelle 1 : Undefined"
+                android:text="Ici, vous retrouverez vos resultats conecernant vos poublles comme par exemple la date, le poid, de vos pesées mais aussi la moyenne de vos 5 dernières pesées (A MODIFIER ) "
                 android:textColor="@color/black" />
             <TextView
                 android:id="@+id/tvresultsPB2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="poubelle 2 : Undefined"
+                android:text=""
                 android:textColor="@color/black"/>
             <TextView
                 android:id="@+id/tvresultsPB3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="poubelle 3 : Undefined"
+                android:text=""
                 android:textColor="@color/black"/>
             <TextView
                 android:id="@+id/tvresultsPB4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="poubelle 4 : Undefined"
+                android:text=""
                 android:textColor="@color/black"/>
             <TextView
                 android:id="@+id/tvresultsPB5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="poubelle 5 : Undefined"
+                android:text=""
                 android:textColor="@color/black" />
 
                 <LinearLayout
@@ -99,7 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
-                        android:text="Moyenne = Undefined"
+                        android:text=""
                         android:layout_marginRight="5dp"
                         android:textColor="@color/black" />
                     <TextView
@@ -107,23 +107,33 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
-                        android:text="Nombre mesures = Undefined"
+                        android:text=""
                         android:layout_marginBottom="10dp"
                         android:textColor="@color/black" />
                 </LinearLayout>
 
             </LinearLayout>
 
-
         </ScrollView>
 
+        <Button
+            android:id="@+id/buttongraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Charger le graphique"
+            android:textSize="10dp"
+            android:layout_gravity="center"
+            android:onClick="loadNote"/>
+
         <com.jjoe64.graphview.GraphView
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"
-            android:layout_height="520px"
+            android:layout_height="420px"
             android:id="@+id/graph" />
+
+
     </LinearLayout>
 
     <!-- BARRE D'OUTILS -->

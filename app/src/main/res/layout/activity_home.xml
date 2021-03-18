@@ -10,46 +10,68 @@
         android:id="@+id/some_id_if_needed"
         layout="@layout/header"/>
 
+    <TextView
+        android:id="@+id/Weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.080"/>
 
-    <LinearLayout
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <!-- Fond d'ecran -->
-        <TextView
-            android:id="@+id/Weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/weight"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:layout_marginTop="50dp"
-            android:layout_gravity="center"
-            />
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Bienvenue sur l'application Weightless"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="Bienvenue sur l'application Weightless"
-            android:layout_marginTop="100px"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"/>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="110dp">
+            android:layout_height="110dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.33">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -60,13 +82,12 @@
                     android:textSize="17dp"
                     android:textColor="@color/black"
                     android:gravity="center_horizontal" />
+
             </LinearLayout>
+
 
         </ScrollView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="650px">
 
             <ImageView
                 android:contentDescription="@string/img_description_fleche"
@@ -75,175 +96,217 @@
                 android:layout_height="227dp"
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/fleche"
-                android:layout_marginLeft="250px"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.690"/>
 
             <TextView
                 android:id="@+id/Go"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="200px"
-                android:layout_marginLeft="380px"
                 android:text="@string/GO"
                 android:textColor="@color/black"
-                android:textSize="60sp" />
+                android:textSize="60sp"
+                app:srcCompat="@drawable/fleche"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.650"/>
 
             <Button
                 android:id="@+id/btn_Go1"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_marginTop="30px"
-                android:layout_marginLeft="250px"
                 android:background="@android:color/transparent"
-                android:stateListAnimator="@null" />
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/logoPoids"
-                    android:layout_width="60dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_height="50dp"
-                    android:contentDescription="@string/img_description_weight"
-                    android:src="@drawable/logo_poids_blanc" />
-
-                <TextView
-                    android:id="@+id/NotationPoids"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="65dp"
-                    android:layout_marginLeft="35dp"
-                    android:text="@string/weight"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    />
-
-                <Button
-                    android:id="@+id/btn_weight"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:contentDescription="@string/img_description_settings"
-                    android:id="@+id/logoRes"
-                    android:layout_width="60dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/logo_resultat" />
-
-                <TextView
-                    android:id="@+id/Notationpoids"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="65dp"
-                    android:layout_marginLeft="25dp"
-                    android:text="@string/results"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    />
-
-                <Button
-                    android:id="@+id/btn_results"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:contentDescription="@string/img_description_settings"
-                    android:id="@+id/logoParam"
-                    android:layout_width="60dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/logo_param" />
-
-                <TextView
-                    android:id="@+id/Notationparam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="65dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="@string/settings"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    />
-
-                <Button
-                    android:id="@+id/btn_settings"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    />
-
-            </RelativeLayout>
+                android:stateListAnimator="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.680"/>
 
 
-            <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
 
-                <ImageView
-                    android:contentDescription="@string/img_description_settings"
-                    android:id="@+id/logoConnexion"
-                    android:layout_width="60dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/logo_connexion" />
+        <!-- BARRE D'OUTILS -->
+    <!-- Bouton poids -->
 
-                <TextView
-                    android:id="@+id/Notationconnexion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="65dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="@string/profil"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    />
+    <ImageView
+        android:contentDescription="@string/img_description_weight"
+        android:id="@+id/logoPoids"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/logo_poids"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
 
-                <Button
-                    android:id="@+id/btn_connexion"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    />
+    <TextView
+        android:id="@+id/NotationPoids"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintVertical_bias="0.985"/>
 
-            </RelativeLayout>
+    <Button
+        android:id="@+id/btn_weight"
+        android:layout_width="103dp"
+        android:layout_height="75dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        android:stateListAnimator="@null"/>
 
-        </LinearLayout>
 
 
-    </LinearLayout>
+    <!-- Bouton Resultat -->
+    <ImageView
+        android:contentDescription="@string/img_description_settings"
+        android:id="@+id/logoResult"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/logo_resultat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <TextView
+        android:id="@+id/Notationpoids"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/results"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.985"/>
+
+    <Button
+        android:id="@+id/btn_results"
+        android:layout_width="103dp"
+        android:layout_height="75dp"
+        android:background="@android:color/transparent"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.334"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <!-- Bouton Param -->
+    <TextView
+        android:id="@+id/Notationparam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.985"/>
+
+    <ImageView
+        android:contentDescription="@string/img_description_settings"
+        android:id="@+id/logoParam"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/logo_param"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <Button
+        android:id="@+id/btn_settings"
+        android:layout_width="103dp"
+        android:layout_height="75dp"
+        android:background="@android:color/transparent"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.655"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <!-- Bouton Connexion -->
+
+    <ImageView
+        android:contentDescription="@string/img_description_connexion"
+        android:id="@+id/logoConnexion"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:src="@drawable/logo_connexion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <TextView
+        android:id="@+id/Notationconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/profil"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.985"/>
+
+    <Button
+        android:id="@+id/btn_connexion"
+        android:layout_width="103dp"
+        android:layout_height="75dp"
+        android:background="@android:color/transparent"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
