@@ -36,6 +36,12 @@
     <string name="img_description_fleche">Image Fleche verte écran accueil</string>
     <string name="a11">Fleche verte</string>
 
+    <!-->Généraux<-->
+    <string name="gen_name">Nom</string>
+    <string name="gen_phone">Téléphone</string>
+    <string name="gen_edit">Editer</string>
+    <string name="gen_password">Mot de passe</string>
+
     <!-->Bandeau de sélection de pages<-->
     <string name="weight">Poids</string>
     <string name="results">Résultats</string>
@@ -57,10 +63,6 @@
     <string name="badges_6">Donne nous ton avis</string>
     <string name="badges_7">Regardes ton historique</string>
     <string name="badges_8">Changes de pseudo</string>
-
-    <!-->Page Update Password<-->
-    <string name="update_password">Mot de passe</string>
-    <string name="update_password_edit">Changer mon mot de passe</string>
 
     <!-->Page Mon profil<-->
     <string name="profile_name">Nom : </string>
@@ -84,5 +86,13 @@
 
     <!-->Page Changement de langue<-->
     <string name="langues_desc">Notre application est disponible en 3 langues pour le moment (Francais, Anglais et Espagnol), mais de nouvelles seront bientôt disponibles ! Pour changer de langue, allez dans les paramètres de votre téléphone et choisissez la langue que vous voulez !"</string>
+
+    <!-->Page Themes<-->
+    <string name="themes_activity">Ceci est l"'"activité thèmes</string>
+
+    <!-->Page Poids<-->
+    <string name="poids_desc">Poids</string>
+    <string name="update_password">Mot de passe</string>
+    <string name="update_password_edit">Editer mon mot de passe</string>
 
 </resources>

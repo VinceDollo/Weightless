@@ -30,7 +30,7 @@
     <string name="nom_wifi">WiFi name</string>
     <string name="badges">My badges</string>
     <string name="load_badges">Load my badges</string>
-    <string name="badges_unlock">Unlocked</string>
+    <string name="badges_unlock">Locked</string>
     <string name="badges_1">Create your account</string>
     <string name="badges_2">Create your 5th dustbin</string>
     <string name="badges_3">Create your 20th dustbin</string>
@@ -55,4 +55,10 @@
     <string name="home_welcome">Welcome on Weightless app</string>
     <string name="home_desc">"On this app, you no longer have to worry about incentive pricing. Weightless allows you to calculate the cost of your waste in order to better manage your budget. "</string>
     <string name="langues_desc">"Our app is available in 3 languages at the moment (French, English and Spanish), but new ones will be available soon! To change the language, go to your phone settings and choose the language you want! "</string>
+    <string name="themes_activity">This is theme activity</string>
+    <string name="poids_desc">Weight</string>
+    <string name="gen_name">Name</string>
+    <string name="gen_phone">Phone</string>
+    <string name="gen_edit">Edit</string>
+    <string name="gen_password">Password</string>
 </resources>

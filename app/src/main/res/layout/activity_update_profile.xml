@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="name"
+            android:hint="@string/gen_name"
             android:inputType="textPersonName" />
 
         <EditText
@@ -26,13 +26,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="phone"
+            android:hint="@string/gen_phone"
             android:inputType="phone" />
 
         <Button
             android:id="@+id/buttonupdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EDIT" />
+            android:text="@string/gen_edit" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

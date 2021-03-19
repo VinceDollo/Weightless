@@ -55,4 +55,10 @@
     <string name="previous">Anterior</string>
     <string name="next">Próximo</string>
     <string name="langues_desc">"Nuestra aplicación está disponible en 3 idiomas en este momento (francés, inglés y español), ¡pero pronto habrá nuevos disponibles! Para cambiar el idioma, vaya a la configuración de su teléfono y elija el idioma que desee. "</string>
+    <string name="gen_password">Contrasena</string>
+    <string name="gen_name">Apellido</string>
+    <string name="gen_phone">Téléfono</string>
+    <string name="gen_edit">Editar</string>
+    <string name="themes_activity">Esta es la actividad de los temas</string>
+    <string name="poids_desc">Peso</string>
 </resources>

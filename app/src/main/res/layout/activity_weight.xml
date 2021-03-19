@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Poids"
+            android:hint="@string/poids_desc"
             android:layout_gravity="center" />
 
         <Button
