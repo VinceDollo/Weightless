@@ -14,7 +14,7 @@
         android:id="@+id/title_connexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/connexion"
+        android:text="@string/gen_connexion"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="25sp"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="130dp"
-            android:text="@string/email"
+            android:text="@string/gen_mail"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -52,7 +52,7 @@
             android:layout_marginLeft="80dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/back"
-            android:hint="@string/email"
+            android:hint="@string/gen_mail"
             android:paddingLeft="10dp"
             android:textColor="@color/black"
             android:singleLine="true"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="30dp"
-            android:text="@string/mdp"
+            android:text="@string/gen_password"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -79,7 +79,7 @@
             android:layout_marginLeft="80dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/back"
-            android:hint="@string/mdp"
+            android:hint="@string/gen_password"
             android:inputType="textPassword"
             android:paddingLeft="10dp"
             android:singleLine="true"
@@ -101,7 +101,7 @@
                 android:layout_width="100dp"
                 android:layout_height="45dp"
                 android:background="@drawable/backbutton"
-                android:text="@string/seConnecter" />
+                android:text="@string/gen_connexion" />
 
             <Button
                 android:id="@+id/buttonreg"
@@ -109,7 +109,7 @@
                 android:layout_height="45dp"
                 android:layout_marginLeft="30dp"
                 android:background="@drawable/backbutton"
-                android:text="@string/CreerCompte" />
+                android:text="@string/con_creerCompte" />
 
         </LinearLayout>
 
@@ -119,7 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Nombres d'essais restants = 5" />
+            android:text="@string/con_essaisrestants" />
 
         <Button
             android:id="@+id/forgotPassword"
@@ -129,7 +129,7 @@
             android:layout_marginTop="10dp"
             android:background="@android:color/transparent"
             android:stateListAnimator="@null"
-            android:text="@string/mdpoublié"
+            android:text="@string/con_mdpoublié"
             android:textAllCaps="false"
             android:textColor="@color/bleu"
             android:textSize="14dp" />

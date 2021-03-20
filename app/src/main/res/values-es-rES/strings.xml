@@ -39,17 +39,11 @@
     <string name="Themes">Temas</string>
     <string name="Langue">Idiomas</string>
     <string name="Aide">Ayuda</string>
-    <string name="CreerCompte">Crear mi cuenta</string>
-    <string name="seConnecter">Connectarse</string>
-    <string name="mdp">Contrasena</string>
     <string name="creation">"Creación de cuenta "</string>
-    <string name="email">Correo</string>
     <string name="identifiant">Nombre de usuario</string>
     <string name="account">Mi cuenta</string>
     <string name="Terms_of_use">Condiciones de uso</string>
     <string name="privacy_policy">"Configuración de privacidad "</string>
-    <string name="connexion">"Conexión "</string>
-    <string name="mdpoublié">"Contraseña olvidada "</string>
     <string name="nom_wifi">Nombre WiFi</string>
     <string name="parametre_balance">"Configuración de equilibrio "</string>
     <string name="previous">Anterior</string>
@@ -61,4 +55,13 @@
     <string name="gen_edit">Editar</string>
     <string name="themes_activity">Esta es la actividad de los temas</string>
     <string name="poids_desc">Peso</string>
+    <string name="con_creerCompte">Crear mi cuenta</string>
+    <string name="con_essaisrestants">Número de ensayos restantes = 5</string>
+    <string name="con_mdpoublié">Contraseña olvidada</string>
+    <string name="gen_mail">Correo</string>
+    <string name="gen_connexion">Conexion</string>
+    <string name="res_5res">Cargar mis últimos 5 resultados</string>
+    <string name="res_graph">Cargar mi gráfico</string>
+    <string name="res_prix">Precio total a pagar: ???</string>
+    <string name="res_desc">Aquí encontrará los resultados relacionados con sus contenedores, como la fecha, el peso de sus pesajes, pero también el promedio de sus últimos 5 pesajes (PARA CAMBIAR)</string>
 </resources>

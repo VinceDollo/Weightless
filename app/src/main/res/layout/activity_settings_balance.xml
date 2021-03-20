@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="30dp"
-        android:text="@string/mdp"
+        android:text="@string/gen_password"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -79,7 +79,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/back"
-        android:hint="@string/mdp"
+        android:hint="@string/gen_password"
         android:paddingLeft="10dp"
         android:inputType="textPassword"
         android:textColor="@color/black"
@@ -99,7 +99,7 @@
                 android:layout_width="130dp"
                 android:layout_height="40dp"
                 android:background="@drawable/backbutton"
-                android:text="@string/seConnecter" />
+                android:text="@string/gen_connexion" />
 
         </LinearLayout>
 
