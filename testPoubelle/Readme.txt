@@ -1,0 +1,1 @@
+ce code permet de connecter l'esp32 à un point d'accès et lancer une ecoute sur le port 51000. Apres reception d'un message, il repond par un nombre aléatoire qui sera par la suite remplacé par la masse qui a été pesée.
