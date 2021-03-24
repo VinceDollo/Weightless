@@ -122,42 +122,6 @@ public class Activity_home extends AppCompatActivity {
         });
     }
 
-    private void saveOnFireBase(){
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        String poids = textGo.getText().toString();
-        String currentTime = Calendar.getInstance().getTime().toString();
-        String[] valueTime = currentTime.split(" ");
-        String day = valueTime[2];
-        String month =valueTime[1];
-        String year = valueTime[5];
-
-        Map<String, Object> note = new HashMap<>();
-        note.put(KEY_DAY,day);
-        note.put(KEY_MONTH,month);
-        note.put(KEY_YEAR,year);
-        note.put(KEY_POIDS,poids );
-
-        db.collection(firebaseAuth.getUid()).document(numberPoubelle).set(note)
-            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-                    //Toast.makeText(activity_weight.this, "Sucess", Toast.LENGTH_SHORT).show();
-                }
-            })
-            .addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                   // Toast.makeText(activity_weight.this, "Fail", Toast.LENGTH_SHORT).show();
-                    //Log.d(TAG, e.toString());
-                }
-            });
-
-    }
     private void getWeightFormEsp()  {
         System.out.println("Dans getWeightFormEsp");
         new Thread(){
