@@ -2,6 +2,7 @@ package innov.fr;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class activity_settings_themes extends AppCompatActivity {
 
-    private Button button;
+    private Button button,btndark,btnlight;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -54,6 +55,27 @@ public class activity_settings_themes extends AppCompatActivity {
         });
 
         firebaseAuth= FirebaseAuth.getInstance();
+
+        btnlight = findViewById(R.id.buttonlight);
+        btnlight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                startActivity(new Intent(getApplicationContext(),activity_settings_themes.class));
+                finish();
+            }
+        });
+
+        btndark= findViewById(R.id.buttondark);
+        btndark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                startActivity(new Intent(getApplicationContext(),activity_settings_themes.class));
+                finish();
+            }
+        });
+
     }
     public void openActivityWeight() {
         Intent intent = new Intent(this, activity_weight.class);
